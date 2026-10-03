@@ -45,7 +45,7 @@ A `ui.render` hook returns a plain-data element tree built from constructors tha
 | `Box` | yes | yes | yes | yes | flex layout, `gap`/`columnGap`/`rowGap`, `padding*`, `margin*`, `width`, `height`, `min*`, `borderStyle`, `borderColor`, `backgroundColor`, `position`, `overflow`, `display`, `hover`, `key` | types L741-836 |
 | `Text` | yes | yes | yes | yes | `color`, `backgroundColor`, `bold`, `italic`, `underline`, `strikethrough`, `dimColor`, `inverse`, `wrap`, `hover` | types L11869-11886 |
 | `Button` | yes | yes | yes | yes | `key`, `label`, `onPress` (required), `hotkey`, `action`, `plain`, `dimColor`, `variant`, `role`, `autoFocus` | types L900-1000 |
-| `Link` | yes | yes | yes | yes | `href` (2048 printable ASCII), `label?` | types L5330-5348 |
+| `Link` | yes | yes | yes | yes | `href`: an `https:` URL or `http://localhost` only, 2048 printable ASCII; any other scheme (such as `file:`) refuses the whole tree (C-API-061); `label?` | types L5330-5348 |
 | `Code` | yes | yes | yes | yes | `source` (10,000 chars), `language?`, `path?`, `startLine?`, `format?: 'diff'`, `wrap?` | types L1453-1505 |
 | `Markdown` | yes | yes | yes | yes | `text` (10,000 chars), `key?`, `dimColor?`, `onLinkPress?`, `pressableLinks?` | types L5385-5426 |
 | `Input` | yes | yes | no | yes | `key`, `onSubmit` (required), `label`, `placeholder`, `value`, `submitLabel`, `onInput`, `autoFocus` | types L5159-5205 |
@@ -131,6 +131,10 @@ There are no intrinsic string tags; every tag is a constructor from the table (t
 ## `Raster`, `Image`, `Client`
 
 Pack `Raster` cells as three 32-bit numbers per cell (code point, foreground, background), `0x01000000` meaning the terminal default; base64 the bytes (docs-mods-interface L436-449). The terminal maps colors to a smaller palette, so `0x2e7d32` draws as `#337733` (docs-mods-gallery, Raster section). Animate with `$.ui.blit({ requestId, key, columns, rows, cells })`, which repaints without re-running the hook, up to 120 a second accepted (C-API-053). `Client` runs a second module of yours for animation and pointer input; it has no `$` and reaches hooks only by posting, which arrives as `ui.message` (docs-mods-interface L425; types L1377-1436).
+
+## Links to local files
+
+A `Link` to `file://...` passes `claude plugin validate` and `tsc` (`href` is typed as `string`) but refuses the whole tree at draw time, so the site falls back to Claude Code's own drawing (types 2.1.288 L5330-5338; C-API-061). To point at a local file, use `Markdown` with a `file:` link, whose links are pressable, or draw the path as `Text`. Found in review of seo-cockpit 0.3.0 (claude-seo), where the pane would have gone blank after its first HTML export.
 
 ## Validation
 

@@ -138,7 +138,7 @@ Hubs: [[wiki/concepts/_index|Concepts Hub]] | [[wiki/flows/_index|Flows Hub]] | 
 
 - [[Contradictions Register]] (evergreen, evidence-based): Every place where two sources disagree, with the evidence on each side and which one wins, as recorded by the five research lanes on 2026-10-03.
 - [[Source Manifest Guide]] (developing, evidence-based): Four records hold this brain's provenance, each answering one question.
-- [[research-pack-claude-mods|Research Pack: Claude Code Mods]] (evergreen, evidence-based): The dated citation index for this brain, generated on 2026-10-03 from `references/source-ledger.json` (50 public sources), the local captures list (4), and every #91870 comment the vault cites (36).
+- [[research-pack-claude-mods|Research Pack: Claude Code Mods]] (evergreen, evidence-based): The dated citation index for this brain, generated on 2026-10-03 from `references/source-ledger.json` (50 public sources), the local captures list (5), and every #91870 comment the vault cites (36).
 
 ## Gaps (3)
 

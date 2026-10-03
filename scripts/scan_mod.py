@@ -53,7 +53,9 @@ BENIGN_ENV = {"HOME", "USER", "LOGNAME", "PATH", "SHELL", "TERM", "LANG", "PWD",
 DENY_RE = re.compile(r"\{\s*deny\s*:")
 TOOL_CALL_REG_RE = re.compile(r"""\bon\(\s*['"`]tool\.call['"`]""")
 REG_CATCH_RE = re.compile(r"\}\s*\)\s*\.catch\(")
-MODULE_STATE_RE = re.compile(r"(?m)^\s{0,2}let\s+[A-Za-z_$]")
+LET_RE = re.compile(r"(?m)^[ \t]*let\s+[A-Za-z_$]")
+REGISTER_RE = re.compile(r"\b(?:function\s+register\b|(?:const|let|var)\s+register\b)")
+STRING_RE = re.compile(r"""'(?:\\.|[^'\\\n])*'|"(?:\\.|[^"\\\n])*"|`(?:\\.|[^`\\])*`""")
 INTERNALS_RE = re.compile(r"\.claude/(sessions|projects|history|todos)|/proc/")
 CACHE_EVENTS = {"prompt.section", "prompt.context", "skill.prompt", "prompt.attachment"}
 CONTROL_EVENTS = {"tool.call", "tool.check", "prompt.submit", "turn.step", "agent.spawn", "session.compact", "process.spawn"}
@@ -62,6 +64,42 @@ POLICY_EVENTS = {"engine.create", "plugin.register"}
 
 class ScanError(Exception):
     """Raised when the directory is not a scannable mod."""
+
+
+def module_state_hits(text: str) -> list[int]:
+    """Offsets of `let` bindings that live for a whole module load: at module
+    level, or directly in the body of `register`. Both are wiped by every
+    reload. A `let` inside any other function is local and is not counted
+    (an indentation rule flagged a helper's local `let data`)."""
+    # Blank out strings so their braces do not count; keep offsets intact.
+    clean = STRING_RE.sub(lambda m: " " * len(m.group(0)), text)
+    depth_at = [0] * (len(clean) + 1)
+    depth = 0
+    for i, ch in enumerate(clean):
+        depth_at[i] = depth
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth = max(0, depth - 1)
+    depth_at[len(clean)] = depth
+    body: tuple[int, int, int] | None = None
+    m = REGISTER_RE.search(clean)
+    if m:
+        arrow = clean.find("=>", m.end())
+        start = clean.find("{", arrow if m.group(0).startswith(("const", "let", "var")) and arrow != -1 else m.end())
+        if start != -1:
+            inner = depth_at[start] + 1
+            end = start + 1
+            while end < len(clean) and not (clean[end] == "}" and depth_at[end] == inner):
+                end += 1
+            body = (start, end, inner)
+    hits = []
+    for hit in LET_RE.finditer(clean):
+        at = hit.end() - 1
+        d = depth_at[at]
+        if d == 0 or (body is not None and body[0] < at < body[1] and d == body[2]):
+            hits.append(at)
+    return hits
 
 
 def strip_comments(text: str) -> str:
@@ -152,9 +190,10 @@ def scan(root: Path, validate_json: Path | None = None) -> dict:
             "event-rewrite": r"next\(\s*\{\s*\.\.\.e",
             "absolute-fs-path": r"\$\.fs\.(read|write|list)\(\s*['\"`](/|~)",
             "guard-without-catch": DENY_RE.pattern,
-            "module-variable-state": MODULE_STATE_RE.pattern,
             "reads-claude-internals": INTERNALS_RE.pattern,
         }
+        if code == "module-variable-state":
+            return bool(module_state_hits(text))
         return bool(re.search(probes.get(code, r"$^"), text))
 
     if "http.fetch" in call_set and call_set & {"process.run", "process.spawn"}:
@@ -182,7 +221,7 @@ def scan(root: Path, validate_json: Path | None = None) -> dict:
     if guards and DENY_RE.search(all_text) and len(REG_CATCH_RE.findall(all_text)) < guards:
         flag("guard-without-catch", "medium",
              f"denies tool calls but fewer registration .catch handlers than tool.call hooks ({len(REG_CATCH_RE.findall(all_text))} of {guards}), so a failing or timed-out guard lets the call through")
-    if MODULE_STATE_RE.search(all_text):
+    if any(module_state_hits(text) for text in sources.values()):
         flag("module-variable-state", "review", "keeps state in module-level or register-level variables, which every reload wipes; prefer $.state or $.store")
     if INTERNALS_RE.search(all_text):
         flag("reads-claude-internals", "medium", "reads undocumented Claude Code internals (session files under ~/.claude or /proc), which a release can break")

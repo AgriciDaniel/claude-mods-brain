@@ -42,6 +42,10 @@ sources:
 
 The testing kit is the module `claude-code/testing`, which `claude plugin test [dir]` loads for every `*.test.ts` and `*.test.tsx` under a mod's folder, each file in a child of the Claude Code binary, with no session, sign-in or network (C-LIF-022). A test gets the engine's own `$` and an `on` whose hooks sit beneath every plugin and stand in for Claude Code, so the test fires real events through the mod and stubs whatever the engine would have answered (C-LIF-024). It exports `test`, `describe`, `expect`, `mock` and `tier` (C-LIF-023), and it checks the tree a hook returns for a named surface, never the paint (C-LIF-031).
 
+
+> [!warning] The kit needs mods switched on for the account
+> `claude plugin test` runs only where mods are enabled. On 2026-10-03 the owner's account had the remote flag `tengu_plugin_hooks_modules` set to `false` (still `false` after two re-fetches), and every run stopped with "hooks modules are turned off in this process ... installed mods are turned off remotely" (C-LIF-061, `.raw/captures/local-2026-10-03/mods-remote-gate.md`). `claude plugin validate` still ran. Pure logic in `hooks/lib` can be tested outside the kit meanwhile; hook tests wait for the flag.
+
 ## The model in one line
 
 The test's `$` raises events (`$.tool.call`, `$.command.run`, `$.ui.mount`) into the plugins under test; whatever they pass on with `next(e)` or ask of `$` lands on the test's `on(...)` stubs; beneath those, the bottom hook throws `no implementation for <name>`.

@@ -1438,7 +1438,8 @@
         "C-SEC-045",
         "C-SEC-059",
         "C-SEC-061",
-        "C-SEC-062"
+        "C-SEC-062",
+        "C-API-061"
       ],
       "lanes": [
         "api-and-events",
@@ -1565,6 +1566,24 @@
         "security-governance"
       ],
       "notes": "Validate output for exfil shape, evasion shapes, reserved names, settings hooks and bin/, and the two example mods. No mod loaded.",
+      "capture": "not redistributed"
+    },
+    {
+      "id": "local-mods-gate-2026-10-03",
+      "title": "Mods switched off by a remote per-account flag (first-hand CLI observation)",
+      "publisher": "owner's machine, Claude Code 2.1.288 CLI and ~/.claude.json flag cache",
+      "source_type": "primary",
+      "published": "2026-10-03",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-061"
+      ],
+      "lanes": [
+        "lifecycle"
+      ],
+      "notes": "One account, one date. claude plugin test refused three times; tengu_plugin_hooks_modules=false after two re-fetches. Gate scope (account, organisation, rollout fraction) not established.",
       "capture": "not redistributed"
     }
   ]

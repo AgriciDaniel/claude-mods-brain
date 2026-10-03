@@ -123,6 +123,22 @@ def test_scan_risky_mod_flags() -> None:
     assert {"model.complete", "prompt.submit", "prompt.section"} <= cost
 
 
+def test_scan_module_state_ignores_function_locals() -> None:
+    """A helper's local `let` is not module state; a register-level one is (2026-10-03, seo-cockpit verdict.ts)."""
+    import shutil
+    with tempfile.TemporaryDirectory() as tmp:
+        mod = Path(tmp) / "band"
+        shutil.copytree(FIX / "mods" / "clean-band", mod)
+        reg = mod / "hooks" / "register.ts"
+        base = reg.read_text()
+        (mod / "hooks" / "parse.ts").write_text(
+            "export function parse(t: string) {\n  let data\n  try { data = JSON.parse(t) } catch {}\n  return data\n}\n")
+        assert "module-variable-state" not in {f["code"] for f in scan_mod.scan(mod)["red_flags"]}
+        reg.write_text(base.replace("export const register", "let count = 0\nexport const register", 1))
+        flags = {f["code"]: f for f in scan_mod.scan(mod)["red_flags"]}
+        assert flags["module-variable-state"]["files"] == ["hooks/register.ts"]
+
+
 def test_scan_flags_absolute_config_default() -> None:
     import shutil
     with tempfile.TemporaryDirectory() as tmp:
