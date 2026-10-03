@@ -1,10 +1,6 @@
 <p align="center">
-  <img src="assets/hero.svg" alt="Animated: in Claude Code, a guard mod holds a command that reaches outside the project, shows it in a pane with approve and deny, the user denies, and Claude runs the safe command instead" width="100%"/>
+  <img src="assets/hero.svg" alt="Claude Mods Brain: a second brain for Claude Code mods. Linked notes on events, the mods API, safety, the catalog, flows, canon, sources and pitfalls orbit the title." width="100%"/>
 </p>
-
-<h1 align="center">Claude Mods Brain</h1>
-
-<p align="center"><b>That pane, that band, that held command: all of it is a mod.</b><br/>This is everything worth knowing about Claude Code mods, with every claim linked to its source.</p>
 
 <p align="center">
   <img alt="Tested on Claude Code 2.1.288" src="https://img.shields.io/badge/tested%20on-Claude%20Code%202.1.288-d97757"/>
