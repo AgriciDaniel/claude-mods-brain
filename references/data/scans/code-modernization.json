@@ -1,0 +1,265 @@
+{
+  "schema": "mods-brain.mod-scan.v1",
+  "plugin": {
+    "name": "code-modernization",
+    "version": "1.0.0",
+    "description": "Guided modernization for any legacy codebase: start with /modernize, get an assessment, an interactive map, the business rules mined from the code, and a plan you approve, then an upgrade, a rewrite or a rebuild with independent proof that the new code behaves like the old. Includes security hardening, a one-page report, specialist agents, and an optional live progress pane (early access).",
+    "user_config": [
+      "commandPrefix",
+      "legacyDir",
+      "panel",
+      "system",
+      "telemetry",
+      "track",
+      "xray"
+    ],
+    "dependencies": []
+  },
+  "module": "./register.ts",
+  "is_mod": true,
+  "classic_hooks": [
+    "PostToolUseFailure",
+    "SessionStart",
+    "Stop",
+    "StopFailure",
+    "UserPromptSubmit"
+  ],
+  "files": [
+    {
+      "path": "hooks/fleet/fleet.ts",
+      "sha256": "8ef46bbd24fd8e5ce691a306625b72d58f7c6d1ba7b6a302768d8068279e73fd",
+      "lines": 326
+    },
+    {
+      "path": "hooks/host.ts",
+      "sha256": "0e09a2002e8f7916c79507f42c057972f0c696ea8c6d8f6de2ba61bc4e0aef42",
+      "lines": 37
+    },
+    {
+      "path": "hooks/map/estate.ts",
+      "sha256": "3974f2825d405c1a9ff880748f538ff8de6541489e01e57fe5b4cfaf325102f1",
+      "lines": 248
+    },
+    {
+      "path": "hooks/map/raster.ts",
+      "sha256": "cc46052d8c203d3f2eb910547922468cfbce70c0c453713b33319d784e312506",
+      "lines": 89
+    },
+    {
+      "path": "hooks/map/treemap.ts",
+      "sha256": "3cf3e3f4130464af66edeac5b0e5afbf8f62c7b232e42d31e5b7a62d7e00c978",
+      "lines": 146
+    },
+    {
+      "path": "hooks/paths.ts",
+      "sha256": "ff62837865ed2d242d6a59272c07872accb26e6bcd70156f2416ae8435c42e08",
+      "lines": 89
+    },
+    {
+      "path": "hooks/reader/brief.ts",
+      "sha256": "fd61df3c19f91c6026cddc8b4987cb79b7f654aec793ec48f6ca21f059f99196",
+      "lines": 193
+    },
+    {
+      "path": "hooks/reader/discover.ts",
+      "sha256": "f7f83831b56dc0cb89ffd7aee47b351344e39d1ce7c944f08e8ae10231444dce",
+      "lines": 328
+    },
+    {
+      "path": "hooks/reader/estate-model.ts",
+      "sha256": "7bb0ecf41b926b517dd75757a47320e151be5347dddf0fa749584462ddd5d182",
+      "lines": 202
+    },
+    {
+      "path": "hooks/reader/fs.ts",
+      "sha256": "909e69768ed80c67f1f60b6873f62f695ec7252815690271bebc826e2f707ac1",
+      "lines": 73
+    },
+    {
+      "path": "hooks/reader/modernized.ts",
+      "sha256": "fa8e68f0ab05a58559e467d5300d0a64943787acef7310ef5015797812784f57",
+      "lines": 395
+    },
+    {
+      "path": "hooks/reader/progress.ts",
+      "sha256": "27c209ec2be75a65f9dbee0ea4f4bdfb426c17b5fb97831580d36e9305e57235",
+      "lines": 969
+    },
+    {
+      "path": "hooks/reader/rules.ts",
+      "sha256": "06982413681c05ff87fc997919a2a15b01969edfdeee9ae1f3d6d1b82101b064",
+      "lines": 425
+    },
+    {
+      "path": "hooks/reader/topology.ts",
+      "sha256": "4ea90c6191a45b1f1044a112e388de34856630084467f7351191c04687e42bb2",
+      "lines": 236
+    },
+    {
+      "path": "hooks/reader/tracks.ts",
+      "sha256": "28951287bd22498c720c57a30feb7f5e0b5e027eafcc4238fc22f980d4f0aad7",
+      "lines": 82
+    },
+    {
+      "path": "hooks/reader/uplift.ts",
+      "sha256": "ec2f5c34ac29906283490fcf346222caa87551a6e95c778fb494e7662b497354",
+      "lines": 264
+    },
+    {
+      "path": "hooks/reader/verification.ts",
+      "sha256": "b5c1c676c53145c14bc1acf0f795c0bda174d4d703e2bf2512092cd5c760af77",
+      "lines": 147
+    },
+    {
+      "path": "hooks/register.ts",
+      "sha256": "af7734710b221936f29ac5144a3d6ea8bb510886d430a1baeb711b930711d42f",
+      "lines": 1253
+    },
+    {
+      "path": "hooks/review/deck.ts",
+      "sha256": "5f4bf36f5e0cd4dc19dc0abbc52cd0e680961ff4a1777b3078b909ea581764bb",
+      "lines": 123
+    },
+    {
+      "path": "hooks/review/ledger.ts",
+      "sha256": "92eb785e5447eef1c4ac2de4bd3039f5f4c8d09436f0376582d2f0ce4d534fef",
+      "lines": 69
+    },
+    {
+      "path": "hooks/sign.ts",
+      "sha256": "6ebae5215d894ccbf62c6a185c2a1dbba5b6bc6744d40cd95c20ceeff7f25bbf",
+      "lines": 66
+    },
+    {
+      "path": "hooks/state.ts",
+      "sha256": "ad35d8e9a1a1f355ca40898fda8b31400433bf3e13fbaec7d7fe12d5c4843c3d",
+      "lines": 180
+    },
+    {
+      "path": "hooks/tests-run.ts",
+      "sha256": "bc220e03b6db9727dc53df55fd6508d0457767ec83eb523f15ec8b95e5248027",
+      "lines": 78
+    },
+    {
+      "path": "hooks/text.ts",
+      "sha256": "675bcb3d7b14b959cd9a12872fddc5ed49b42f91134ca28586506da6f50d754f",
+      "lines": 34
+    },
+    {
+      "path": "hooks/views/deck.tsx",
+      "sha256": "093d68f013bc7634aeae516bafbb2043f39b514b6de77a34196ebb01702afd56",
+      "lines": 314
+    },
+    {
+      "path": "hooks/views/palette.ts",
+      "sha256": "f1dedffe84d7fd654d10e5fa7981e3760e8d5d945b14e79ebe92396523efe93b",
+      "lines": 8
+    },
+    {
+      "path": "hooks/views/pane.tsx",
+      "sha256": "bb94d81a1e9d5fde72d57e27311156bca4e68680d708d65268fac68879893cc1",
+      "lines": 669
+    },
+    {
+      "path": "hooks/xray/xray.ts",
+      "sha256": "db93bfef36f981782eec156475bc9f3c4fc8c93d9afa58b01c8cd53bd9e43804",
+      "lines": 264
+    }
+  ],
+  "events": {
+    "command.run": [
+      "{ command: 'modernize-panel' }",
+      "{ command: 'modernize-review-pane' }",
+      "{ command: 'modernize-sign' }",
+      "{ command: ['clear', 'resume'] }"
+    ],
+    "prompt.submit": [],
+    "session.start": [],
+    "tool.call": [],
+    "turn.complete": [],
+    "turn.start": [],
+    "ui.close": [],
+    "ui.render": [
+      "{ component: 'PromptHint' }",
+      "{ component: 'AbovePrompt' }",
+      "{ component: 'Pane' }"
+    ]
+  },
+  "calls": {
+    "clock.after": 1,
+    "clock.every": 1,
+    "clock.now": 1,
+    "command.register": 1,
+    "fs.exists": 1,
+    "fs.list": 1,
+    "fs.read": 1,
+    "fs.stat": 1,
+    "fs.write": 1,
+    "prompt.fill": 1,
+    "prompt.submit": 1,
+    "store.get": 1,
+    "store.set": 1,
+    "turn.abort": 1,
+    "ui.blit": 1,
+    "ui.close": 1,
+    "ui.invalidate": 1,
+    "ui.log": 1,
+    "ui.open": 1,
+    "ui.resolve": 2,
+    "ui.status": 1,
+    "ui.toast": 1
+  },
+  "reach": "L2",
+  "control_events": [
+    "prompt.submit",
+    "tool.call"
+  ],
+  "cost_surface": [
+    {
+      "call": "prompt.submit",
+      "why": "starts a turn"
+    }
+  ],
+  "red_flags": [
+    {
+      "code": "event-rewrite",
+      "severity": "review",
+      "detail": "rewrites events through next({...e}); read each rewrite by hand, a scan cannot judge it",
+      "files": [
+        "hooks/register.ts"
+      ]
+    },
+    {
+      "code": "module-variable-state",
+      "severity": "review",
+      "detail": "keeps state in module-level or register-level variables, which every reload wipes; prefer $.state or $.store",
+      "files": [
+        "hooks/map/estate.ts",
+        "hooks/map/raster.ts",
+        "hooks/map/treemap.ts",
+        "hooks/reader/brief.ts",
+        "hooks/reader/discover.ts",
+        "hooks/reader/estate-model.ts",
+        "hooks/reader/modernized.ts",
+        "hooks/reader/progress.ts",
+        "hooks/reader/rules.ts",
+        "hooks/reader/topology.ts",
+        "hooks/reader/uplift.ts",
+        "hooks/reader/verification.ts",
+        "hooks/review/ledger.ts",
+        "hooks/views/deck.tsx",
+        "hooks/views/pane.tsx",
+        "hooks/xray/xray.ts"
+      ]
+    },
+    {
+      "code": "absolute-config-default",
+      "severity": "review",
+      "detail": "userConfig defaults point at machine-specific absolute paths: commandPrefix",
+      "files": [
+        ".claude-plugin/plugin.json"
+      ]
+    }
+  ],
+  "validate": null
+}

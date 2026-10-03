@@ -1,0 +1,1571 @@
+{
+  "version": 1,
+  "status": "researched",
+  "domain": "Claude Code mods",
+  "refresh_cadence": "on every Claude Code release (re-capture generated typings and diff the API surface); monthly sweep of official mods docs, the #91870 design thread, and community directories",
+  "rules": {
+    "researched_requires": [
+      "at least two captured sources for fast-moving or high-stakes domains",
+      "at least one official/primary source for lower-risk domains",
+      "retrieved dates, refresh_due dates, source_type, confidence, and claim coverage",
+      "no placeholder/example URLs"
+    ],
+    "accepted_primary_types": [
+      "official",
+      "primary",
+      "vendor",
+      "regulator",
+      "government",
+      "standards",
+      "standards-body",
+      "authority",
+      "api-docs"
+    ]
+  },
+  "sources": [
+    {
+      "id": "blog-mods-launch",
+      "title": "Customize Claude Code with mods",
+      "url": "https://claude.com/blog/claude-code-mods",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-ECO-005",
+        "C-SEC-001",
+        "C-SEC-018",
+        "C-SEC-019",
+        "C-SEC-025"
+      ],
+      "lanes": [
+        "ecosystem",
+        "security-governance"
+      ],
+      "notes": "Launch post, 2026-10-01; not sandboxed; sec-default summary (less precise than admin page)."
+    },
+    {
+      "id": "claudedev-getting-started",
+      "title": "Getting started with Claude Code mods",
+      "url": "https://claude.dev/blog/getting-started-with-claude-code-mods/",
+      "publisher": "Anthropic (claude.dev, Addy Osmani)",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-API-007",
+        "C-API-012",
+        "C-ECO-022",
+        "C-LIF-005",
+        "C-LIF-007",
+        "C-LIF-014",
+        "C-LIF-018",
+        "C-LIF-050",
+        "C-PAT-001",
+        "C-PAT-002",
+        "C-PAT-013",
+        "C-PAT-040",
+        "C-PAT-050",
+        "C-SEC-042"
+      ],
+      "lanes": [
+        "api-and-events",
+        "ecosystem",
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Local capture .raw/captures/web-2026-10-03/claudedev-getting-started.txt; corroborates middleware model, 10 s own-time budget, AbovePrompt empty by default."
+    },
+    {
+      "id": "code-modernization-1-0-0",
+      "title": "code-modernization plugin 1.0.0 (official example mod)",
+      "url": "https://github.com/anthropics/claude-plugins-official/tree/d182ca456ca09d31d139f7d3818d1d333b103cce/plugins/code-modernization",
+      "publisher": "Anthropic",
+      "source_type": "primary",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-API-001",
+        "C-API-048",
+        "C-ECO-024",
+        "C-ECO-025",
+        "C-ECO-026",
+        "C-LIF-023",
+        "C-LIF-027",
+        "C-LIF-036",
+        "C-LIF-037",
+        "C-LIF-059",
+        "C-PAT-010",
+        "C-PAT-013",
+        "C-PAT-049",
+        "C-SEC-060"
+      ],
+      "lanes": [
+        "api-and-events",
+        "ecosystem",
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "hooks/hooks.json carries both settings hooks and modules; register.ts uses typed On, ResultOf, ui.close, AbovePrompt and PromptHint render hooks."
+    },
+    {
+      "id": "docs-hooks",
+      "title": "Hooks reference",
+      "url": "https://code.claude.com/docs/en/hooks",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-PAT-022",
+        "C-PAT-023",
+        "C-PAT-025",
+        "C-PAT-026",
+        "C-PAT-042"
+      ],
+      "lanes": [
+        "patterns-and-ideas"
+      ],
+      "notes": "Settings hook events, handler types, parallelism, timeouts, Stop cap"
+    },
+    {
+      "id": "docs-hooks-guide",
+      "title": "Get started with Claude Code hooks",
+      "url": "https://code.claude.com/docs/en/hooks-guide",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-PAT-006",
+        "C-PAT-008"
+      ],
+      "lanes": [
+        "patterns-and-ideas"
+      ],
+      "notes": "tool.check can override non-managed PreToolUse; updatedInput race"
+    },
+    {
+      "id": "docs-mods-admin",
+      "title": "Manage mods for your organization",
+      "url": "https://code.claude.com/docs/en/plugins/mods/admin",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-ECO-010",
+        "C-ECO-011",
+        "C-ECO-056",
+        "C-PAT-032",
+        "C-SEC-003",
+        "C-SEC-011",
+        "C-SEC-014",
+        "C-SEC-015",
+        "C-SEC-018",
+        "C-SEC-019",
+        "C-SEC-020",
+        "C-SEC-021",
+        "C-SEC-022",
+        "C-SEC-023",
+        "C-SEC-024",
+        "C-SEC-025",
+        "C-SEC-026",
+        "C-SEC-027",
+        "C-SEC-028",
+        "C-SEC-029",
+        "C-SEC-030",
+        "C-SEC-031",
+        "C-SEC-032",
+        "C-SEC-034",
+        "C-SEC-035",
+        "C-SEC-038",
+        "C-SEC-050",
+        "C-SEC-063"
+      ],
+      "lanes": [
+        "ecosystem",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Primary source for sec-default, guard options, prependPlugins, org mods, policy mod with fail-closed catch."
+    },
+    {
+      "id": "docs-mods-api",
+      "title": "Use the mods API",
+      "url": "https://code.claude.com/docs/en/plugins/mods/api",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-API-003",
+        "C-API-023",
+        "C-API-024",
+        "C-API-033",
+        "C-API-040",
+        "C-API-042",
+        "C-API-043",
+        "C-LIF-055",
+        "C-LIF-057",
+        "C-PAT-018",
+        "C-PAT-030",
+        "C-PAT-039",
+        "C-SEC-005",
+        "C-SEC-006",
+        "C-SEC-013",
+        "C-SEC-017",
+        "C-SEC-038",
+        "C-SEC-041",
+        "C-SEC-058"
+      ],
+      "lanes": [
+        "api-and-events",
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Local capture plugins-mods-api.md; commands, tools, model calls, clock, sessions messaging, fs/process/http."
+    },
+    {
+      "id": "docs-mods-create",
+      "title": "Create a mod",
+      "url": "https://code.claude.com/docs/en/plugins/mods/create",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-001",
+        "C-LIF-004",
+        "C-LIF-005",
+        "C-LIF-006",
+        "C-LIF-007",
+        "C-LIF-008",
+        "C-LIF-010",
+        "C-LIF-012",
+        "C-LIF-014",
+        "C-LIF-017",
+        "C-LIF-019",
+        "C-LIF-042",
+        "C-LIF-043",
+        "C-LIF-057",
+        "C-LIF-059"
+      ],
+      "lanes": [
+        "lifecycle"
+      ],
+      "notes": "Tutorial, hot-reload approval, types folder, validate inventory and static rules, sharing."
+    },
+    {
+      "id": "docs-mods-events",
+      "title": "React to events with a mod",
+      "url": "https://code.claude.com/docs/en/plugins/mods/events",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-API-006",
+        "C-API-007",
+        "C-API-008",
+        "C-API-009",
+        "C-API-011",
+        "C-API-016",
+        "C-API-017",
+        "C-API-018",
+        "C-API-019",
+        "C-API-021",
+        "C-API-026",
+        "C-API-027",
+        "C-API-030",
+        "C-API-031",
+        "C-API-032",
+        "C-API-057",
+        "C-ECO-021",
+        "C-PAT-001",
+        "C-PAT-003",
+        "C-PAT-004",
+        "C-PAT-006",
+        "C-PAT-007",
+        "C-PAT-008",
+        "C-PAT-015",
+        "C-PAT-019",
+        "C-PAT-035",
+        "C-PAT-037",
+        "C-PAT-038",
+        "C-PAT-059",
+        "C-SEC-021",
+        "C-SEC-022",
+        "C-SEC-032",
+        "C-SEC-036",
+        "C-SEC-037"
+      ],
+      "lanes": [
+        "api-and-events",
+        "ecosystem",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Local capture plugins-mods-events.md; middleware chain, matchers, order, failure handling, worked JS examples."
+    },
+    {
+      "id": "docs-mods-gallery",
+      "title": "Interface gallery for mods",
+      "url": "https://code.claude.com/docs/en/plugins/mods/gallery",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-API-050",
+        "C-API-056"
+      ],
+      "lanes": [
+        "api-and-events"
+      ],
+      "notes": "Local capture plugins-mods-gallery.md; per-element samples (Text, Markdown, Code diff, Box, Button, Input, Select, Raster, Svg)."
+    },
+    {
+      "id": "docs-mods-interface",
+      "title": "Draw in the interface with a mod",
+      "url": "https://code.claude.com/docs/en/plugins/mods/interface",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-API-035",
+        "C-API-045",
+        "C-API-046",
+        "C-API-047",
+        "C-API-051",
+        "C-API-053",
+        "C-API-054",
+        "C-API-055",
+        "C-ECO-022",
+        "C-LIF-018",
+        "C-LIF-056",
+        "C-PAT-009",
+        "C-PAT-010",
+        "C-PAT-011",
+        "C-PAT-014",
+        "C-PAT-040",
+        "C-PAT-041",
+        "C-PAT-056",
+        "C-SEC-003",
+        "C-SEC-004"
+      ],
+      "lanes": [
+        "api-and-events",
+        "ecosystem",
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Local capture plugins-mods-interface.md; render sites, elements, redraw, keyboard focus, state lifetimes."
+    },
+    {
+      "id": "docs-mods-overview",
+      "title": "Mods overview",
+      "url": "https://code.claude.com/docs/en/plugins/mods/overview",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-ECO-001",
+        "C-ECO-005",
+        "C-ECO-019",
+        "C-ECO-020",
+        "C-ECO-056",
+        "C-LIF-001",
+        "C-PAT-012",
+        "C-SEC-001",
+        "C-SEC-002",
+        "C-SEC-029",
+        "C-SEC-030",
+        "C-SEC-038",
+        "C-SEC-062",
+        "C-SEC-063"
+      ],
+      "lanes": [
+        "ecosystem",
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Turn mods on or off, mods active line in /plugin."
+    },
+    {
+      "id": "docs-mods-reference",
+      "title": "Mods reference",
+      "url": "https://code.claude.com/docs/en/plugins/mods/reference",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-API-001",
+        "C-API-002",
+        "C-API-004",
+        "C-API-005",
+        "C-API-010",
+        "C-API-012",
+        "C-API-013",
+        "C-API-014",
+        "C-API-015",
+        "C-API-022",
+        "C-API-028",
+        "C-API-029",
+        "C-API-033",
+        "C-API-034",
+        "C-API-036",
+        "C-API-037",
+        "C-API-038",
+        "C-API-039",
+        "C-API-040",
+        "C-API-041",
+        "C-API-042",
+        "C-API-043",
+        "C-API-044",
+        "C-API-045",
+        "C-API-048",
+        "C-API-049",
+        "C-API-050",
+        "C-API-052",
+        "C-API-054",
+        "C-API-056",
+        "C-API-058",
+        "C-API-059",
+        "C-API-060",
+        "C-ECO-021",
+        "C-ECO-057",
+        "C-LIF-002",
+        "C-LIF-003",
+        "C-LIF-006",
+        "C-LIF-011",
+        "C-LIF-015",
+        "C-LIF-016",
+        "C-LIF-022",
+        "C-LIF-028",
+        "C-LIF-039",
+        "C-LIF-043",
+        "C-LIF-055",
+        "C-LIF-056",
+        "C-PAT-002",
+        "C-PAT-005",
+        "C-PAT-009",
+        "C-PAT-020",
+        "C-PAT-033",
+        "C-PAT-042",
+        "C-PAT-055",
+        "C-PAT-058",
+        "C-SEC-018",
+        "C-SEC-024",
+        "C-SEC-028",
+        "C-SEC-033",
+        "C-SEC-036",
+        "C-SEC-039",
+        "C-SEC-045",
+        "C-SEC-054",
+        "C-SEC-061"
+      ],
+      "lanes": [
+        "api-and-events",
+        "ecosystem",
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Local capture .raw/captures/docs-2026-10-03/plugins-mods-reference.md; states it covers v2.1.287 and defers to the per-build typings."
+    },
+    {
+      "id": "docs-mods-test",
+      "title": "Test a mod",
+      "url": "https://code.claude.com/docs/en/plugins/mods/test",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-022",
+        "C-LIF-023",
+        "C-LIF-024",
+        "C-LIF-025",
+        "C-LIF-026",
+        "C-LIF-027",
+        "C-LIF-030",
+        "C-LIF-031",
+        "C-LIF-032",
+        "C-LIF-036",
+        "C-PAT-028",
+        "C-PAT-029"
+      ],
+      "lanes": [
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Test kit rules, stub table, mock clock, mount handle, policy-mod tests; silent on userConfig options."
+    },
+    {
+      "id": "docs-mods-troubleshoot",
+      "title": "Troubleshoot a mod",
+      "url": "https://code.claude.com/docs/en/plugins/mods/troubleshoot",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-009",
+        "C-LIF-010",
+        "C-LIF-033",
+        "C-LIF-039",
+        "C-PAT-020",
+        "C-PAT-027",
+        "C-PAT-043",
+        "C-PAT-052",
+        "C-SEC-020",
+        "C-SEC-034"
+      ],
+      "lanes": [
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Load refusals, hook skipped, reload failed, debug log line, can-mods-load probe."
+    },
+    {
+      "id": "docs-plugins-create-marketplace",
+      "title": "Create a marketplace",
+      "url": "https://code.claude.com/docs/en/plugins/create-marketplace",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-021",
+        "C-LIF-048",
+        "C-LIF-049",
+        "C-LIF-050",
+        "C-LIF-051"
+      ],
+      "lanes": [
+        "lifecycle"
+      ],
+      "notes": "Local marketplace walkthrough, entry rules, what validate does not catch."
+    },
+    {
+      "id": "docs-plugins-host-marketplace",
+      "title": "Host and maintain a marketplace",
+      "url": "https://code.claude.com/docs/en/plugins/host-marketplace",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-ECO-058",
+        "C-LIF-044",
+        "C-LIF-045",
+        "C-LIF-046",
+        "C-LIF-047",
+        "C-LIF-052"
+      ],
+      "lanes": [
+        "ecosystem",
+        "lifecycle"
+      ],
+      "notes": "Hosts, auto-update, release new version, hold users, release channels, renames."
+    },
+    {
+      "id": "docs-plugins-loading",
+      "title": "Plugin loading reference",
+      "url": "https://code.claude.com/docs/en/plugins/loading",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-010",
+        "C-LIF-044",
+        "C-LIF-046",
+        "C-LIF-051"
+      ],
+      "lanes": [
+        "lifecycle"
+      ],
+      "notes": "Version computation, cache layout, in-place vs copied, auto-update timing."
+    },
+    {
+      "id": "docs-plugins-manifest-reference",
+      "title": "Plugin manifest reference",
+      "url": "https://code.claude.com/docs/en/plugins/manifest-reference",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-019",
+        "C-LIF-020",
+        "C-LIF-037",
+        "C-LIF-038",
+        "C-LIF-040"
+      ],
+      "lanes": [
+        "lifecycle"
+      ],
+      "notes": "Fields, name rules, version, userConfig schema and options, validation tiers."
+    },
+    {
+      "id": "docs-plugins-marketplace-reference",
+      "title": "Marketplace reference",
+      "url": "https://code.claude.com/docs/en/plugins/marketplace-reference",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-021",
+        "C-LIF-045",
+        "C-LIF-048",
+        "C-LIF-052"
+      ],
+      "lanes": [
+        "lifecycle"
+      ],
+      "notes": "Reserved names, top-level and entry fields, sources, validation messages."
+    },
+    {
+      "id": "docs-plugins-measure",
+      "title": "Measure plugin cost and usage",
+      "url": "https://code.claude.com/docs/en/plugins/measure",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-054",
+        "C-SEC-043",
+        "C-SEC-044",
+        "C-SEC-046"
+      ],
+      "lanes": [
+        "lifecycle",
+        "security-governance"
+      ],
+      "notes": "claude plugin details cost readout, usage signals."
+    },
+    {
+      "id": "docs-plugins-org",
+      "title": "Manage plugins for your organization",
+      "url": "https://code.claude.com/docs/en/plugins/org",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-SEC-023",
+        "C-SEC-027",
+        "C-SEC-047"
+      ],
+      "lanes": [
+        "security-governance"
+      ],
+      "notes": "Control matrix, allowlist syntax, update policy, what managed settings cannot enforce."
+    },
+    {
+      "id": "docs-plugins-publish",
+      "title": "Publish and distribute a plugin",
+      "url": "https://code.claude.com/docs/en/plugins/publish",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-016",
+        "C-LIF-020",
+        "C-LIF-044",
+        "C-LIF-046",
+        "C-LIF-047",
+        "C-LIF-049",
+        "C-LIF-050",
+        "C-LIF-052",
+        "C-LIF-053"
+      ],
+      "lanes": [
+        "lifecycle"
+      ],
+      "notes": "Release checklist, distribution routes, versions, tags, renames, directory submission."
+    },
+    {
+      "id": "docs-plugins-security",
+      "title": "Plugin security and trust",
+      "url": "https://code.claude.com/docs/en/plugins/security",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-SEC-002",
+        "C-SEC-010",
+        "C-SEC-046",
+        "C-SEC-047",
+        "C-SEC-048",
+        "C-SEC-052"
+      ],
+      "lanes": [
+        "security-governance"
+      ],
+      "notes": "Marketplace tiers, manual review of hooks.json/.mcp.json/bin, auto-update risk, telemetry redaction."
+    },
+    {
+      "id": "eco-docs-memory",
+      "title": "Memory: AGENTS.md",
+      "url": "https://code.claude.com/docs/en/memory",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-ECO-006",
+        "C-ECO-009"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "agents-md@builtin pluginConfigs key; AGENTS.md needs 2.1.277+. Capture captures/eco-docs-memory-agents-md.md."
+    },
+    {
+      "id": "eco-docs-setup",
+      "title": "Set up Claude Code: release channel",
+      "url": "https://code.claude.com/docs/en/setup",
+      "publisher": "Anthropic",
+      "source_type": "official",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-ECO-053",
+        "C-ECO-054"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "autoUpdatesChannel latest/stable, minimumVersion, Homebrew casks. Capture captures/eco-docs-setup-channels.md."
+    },
+    {
+      "id": "eco-gh-anthropics-mods",
+      "title": "anthropics/claude-code mods/ directory",
+      "url": "https://github.com/anthropics/claude-code/tree/main/mods",
+      "publisher": "Anthropic",
+      "source_type": "primary",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-ECO-001",
+        "C-ECO-002",
+        "C-ECO-003",
+        "C-ECO-004",
+        "C-ECO-006",
+        "C-ECO-007",
+        "C-ECO-008",
+        "C-ECO-010",
+        "C-ECO-011",
+        "C-ECO-012",
+        "C-ECO-013",
+        "C-ECO-014",
+        "C-ECO-015",
+        "C-ECO-016",
+        "C-ECO-017"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "Sparse read of mods/ at pinned SHA; 1290 files incl. types/claude-code.d.ts. Capture captures/eco-gh-anthropics-mods-readme.md plus per-mod README captures.",
+      "pinned_sha": "1c229fcd1e1e4e452e29a8f116b45fe4cfe2c528"
+    },
+    {
+      "id": "eco-gh-arunjay4213",
+      "title": "Arunjay4213/claude-mods",
+      "url": "https://github.com/Arunjay4213/claude-mods",
+      "publisher": "Arunjay4213",
+      "source_type": "practitioner",
+      "published": "2026-09-15",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-031",
+        "C-ECO-032",
+        "C-ECO-033"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "3 stars, no license file, last push 2026-09-15.",
+      "pinned_sha": "d4fffd7de9204a62b10e7b3604fc893158fa25fd"
+    },
+    {
+      "id": "eco-gh-awesome-claude-code-mods",
+      "title": "karanb192/awesome-claude-code-mods",
+      "url": "https://github.com/karanb192/awesome-claude-code-mods",
+      "publisher": "karanb192",
+      "source_type": "market",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-018",
+        "C-ECO-032",
+        "C-ECO-037",
+        "C-ECO-047",
+        "C-ECO-048"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "CC0, 78 stars; data/mods.json generated 2026-10-02T02:16Z against 2.1.287.",
+      "pinned_sha": "59a9911a836326338a831b6c8e37a7a855e405f4"
+    },
+    {
+      "id": "eco-gh-cache-tax",
+      "title": "karanb192/cache-tax",
+      "url": "https://github.com/karanb192/cache-tax",
+      "publisher": "karanb192",
+      "source_type": "practitioner",
+      "published": "2026-09-20",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-039"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "MIT, 39 stars, release v2.1.3 2026-09-18.",
+      "pinned_sha": "2b51ee46ddac789a58170453439838c3a26e134b"
+    },
+    {
+      "id": "eco-gh-cc-pr-tracker",
+      "title": "sezaakgun/cc-pr-tracker",
+      "url": "https://github.com/sezaakgun/cc-pr-tracker",
+      "publisher": "sezaakgun",
+      "source_type": "practitioner",
+      "published": "2026-09-29",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-034",
+        "C-ECO-035"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "MIT, 3 stars, releases v0.1.0 and v0.2.0.",
+      "pinned_sha": "514da1edb4877cdb812ae1a25f79aa81fb6aa6db"
+    },
+    {
+      "id": "eco-gh-cctop",
+      "title": "tomstagl/cctop",
+      "url": "https://github.com/tomstagl/cctop",
+      "publisher": "tomstagl",
+      "source_type": "practitioner",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-027",
+        "C-ECO-028",
+        "C-ECO-029",
+        "C-ECO-030"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "MIT, 2 stars, release v0.9.1 2026-09-29. Capture captures/eco-gh-cctop-readme.md.",
+      "pinned_sha": "6ceafc34a972f4e58d5e53b1c69f80e2a9759d41"
+    },
+    {
+      "id": "eco-gh-code-modernization-upstream",
+      "title": "anthropics/claude-plugins-official plugins/code-modernization",
+      "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-modernization",
+      "publisher": "Anthropic",
+      "source_type": "primary",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-ECO-024"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "plugin.json version 1.0.0 read via contents API; repo HEAD pinned.",
+      "pinned_sha": "d182ca456ca09d31d139f7d3818d1d333b103cce"
+    },
+    {
+      "id": "eco-gh-hamzafer",
+      "title": "hamzafer/claude-code-mods",
+      "url": "https://github.com/hamzafer/claude-code-mods",
+      "publisher": "hamzafer",
+      "source_type": "practitioner",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-040",
+        "C-ECO-041",
+        "C-ECO-042"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "0 stars, no license file, 13 mods, 14 test files.",
+      "pinned_sha": "543abfa670c2242779c9f93cf2ee414a4709a300"
+    },
+    {
+      "id": "eco-gh-joeventner",
+      "title": "joeVenner/claude-code-mods (claudecodemods.com)",
+      "url": "https://github.com/joeVenner/claude-code-mods",
+      "publisher": "joeVenner",
+      "source_type": "market",
+      "published": "2026-09-22",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-050"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "Directory; source-verified means HTTP 200 only.",
+      "pinned_sha": "cc67e83713fde68b9ffbe8afcc317ec551cbc767"
+    },
+    {
+      "id": "eco-gh-karanb192-mods",
+      "title": "karanb192/claude-code-mods",
+      "url": "https://github.com/karanb192/claude-code-mods",
+      "publisher": "karanb192",
+      "source_type": "practitioner",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-036",
+        "C-ECO-037",
+        "C-ECO-038"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "MIT, 33 stars; mod-builder skill, fable-pin mod, cache-tax pointer.",
+      "pinned_sha": "9d73de721ed7e53b88ff24618f266c8082bfed76"
+    },
+    {
+      "id": "eco-gh-onewave",
+      "title": "OneWave-AI/claude-code-mods",
+      "url": "https://github.com/OneWave-AI/claude-code-mods",
+      "publisher": "OneWave AI",
+      "source_type": "practitioner",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-043",
+        "C-ECO-044",
+        "C-ECO-045",
+        "C-ECO-046"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "MIT, 0 stars, 10 mods, 17 test files.",
+      "pinned_sha": "ee519cb3d4d4f6d9a336427fe809d939999fb8c7"
+    },
+    {
+      "id": "eco-gh-osaki42",
+      "title": "osaki42/awesome-claude-mods",
+      "url": "https://github.com/osaki42/awesome-claude-mods",
+      "publisher": "osaki42",
+      "source_type": "market",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "low",
+      "claims": [
+        "C-ECO-050"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "Hand-checked list, CC0, 0 stars.",
+      "pinned_sha": "7ee0986b5827ec7239081b2919962f63d3bab489"
+    },
+    {
+      "id": "eco-gh-playground-mods",
+      "title": "anthropics/claude-code-playground claude-code/mods",
+      "url": "https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods",
+      "publisher": "Anthropic (Claude Code DevRel)",
+      "source_type": "primary",
+      "published": "2026-10-01",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-ECO-020",
+        "C-ECO-021",
+        "C-ECO-022",
+        "C-ECO-023"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "Apache-2.0, 51 stars. Capture captures/eco-gh-playground-mods-readme.md.",
+      "pinned_sha": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86"
+    },
+    {
+      "id": "eco-npm-dist-tags",
+      "title": "npm registry @anthropic-ai/claude-code dist-tags and time",
+      "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code",
+      "publisher": "Anthropic via npm",
+      "source_type": "primary",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-ECO-051",
+        "C-ECO-052",
+        "C-ECO-054"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "Capture captures/eco-npm-claude-code-dist-tags.md."
+    },
+    {
+      "id": "eco-web-claude-mods-com",
+      "title": "Claude Mods: a directory of mods for Claude Code",
+      "url": "https://claude-mods.com/",
+      "publisher": "unknown",
+      "source_type": "market",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "low",
+      "claims": [
+        "C-ECO-049"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "Page states 75 mods listed, updated Sep 17, 2026."
+    },
+    {
+      "id": "eco-web-claudemods-ai",
+      "title": "Claude Mods: the voted catalog of Claude Code mods",
+      "url": "https://claudemods.ai/",
+      "publisher": "claudemods.ai",
+      "source_type": "market",
+      "published": "unknown",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "low",
+      "claims": [
+        "C-ECO-049"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "Voted catalog; fetched title only."
+    },
+    {
+      "id": "eco-web-mods-aidojo",
+      "title": "Awesome Claude Code Mods site",
+      "url": "https://mods.aidojo.si/",
+      "publisher": "karanb192 (per awesome README link)",
+      "source_type": "market",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-047"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "Front end of the awesome list; shows 359 mods."
+    },
+    {
+      "id": "gh-issue-91870",
+      "title": "Mods - make Claude 10x more extensible (anthropics/claude-code#91870)",
+      "url": "https://github.com/anthropics/claude-code/issues/91870",
+      "publisher": "GitHub community",
+      "source_type": "practitioner",
+      "published": "2026-09-03",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-031",
+        "C-ECO-036",
+        "C-LIF-013",
+        "C-LIF-031",
+        "C-LIF-033",
+        "C-LIF-035",
+        "C-LIF-041",
+        "C-LIF-051",
+        "C-PAT-004",
+        "C-PAT-007",
+        "C-PAT-012",
+        "C-PAT-019",
+        "C-PAT-023",
+        "C-PAT-024",
+        "C-PAT-029",
+        "C-PAT-034",
+        "C-PAT-035",
+        "C-PAT-036",
+        "C-PAT-037",
+        "C-PAT-038",
+        "C-PAT-039",
+        "C-PAT-044",
+        "C-PAT-045",
+        "C-PAT-046",
+        "C-PAT-047",
+        "C-PAT-048",
+        "C-PAT-054",
+        "C-PAT-055",
+        "C-PAT-056",
+        "C-PAT-057",
+        "C-PAT-059",
+        "C-PAT-060",
+        "C-SEC-008",
+        "C-SEC-056",
+        "C-SEC-057"
+      ],
+      "lanes": [
+        "ecosystem",
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Comments 5670161416, 5827373997, 5943145826, 5949411806, 5950552972, 5536927938 used."
+    },
+    {
+      "id": "pa-gh-91870-mined",
+      "title": "Mined findings from #91870 (lane capture)",
+      "url": "https://github.com/anthropics/claude-code/issues/91870",
+      "publisher": "patterns-and-ideas lane",
+      "source_type": "supporting",
+      "published": "2026-10-03",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "med",
+      "claims": [
+        "C-PAT-057"
+      ],
+      "lanes": [
+        "patterns-and-ideas"
+      ],
+      "notes": "Subagent extraction, 19 comment ids spot-checked"
+    },
+    {
+      "id": "pluto-function-hooks",
+      "title": "Inside Claude Code Function Hooks: The Trust Problem Behind Claude Mods",
+      "url": "https://pluto.security/blog/claude-code-function-hooks-security/",
+      "publisher": "Pluto Security (Ehud Melzer)",
+      "source_type": "primary",
+      "published": "2026-09-22",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "med",
+      "claims": [
+        "C-SEC-009",
+        "C-SEC-011",
+        "C-SEC-052",
+        "C-SEC-053",
+        "C-SEC-054",
+        "C-SEC-055",
+        "C-SEC-063"
+      ],
+      "lanes": [
+        "security-governance"
+      ],
+      "notes": "Independent research on pre-release 2.1.274; each finding re-checked against 2.1.288 in Mods Trust Model."
+    },
+    {
+      "id": "secgov-karanb192-awesome-readme",
+      "title": "Awesome Claude Code Mods README",
+      "url": "https://github.com/karanb192/awesome-claude-code-mods",
+      "publisher": "karanb192",
+      "source_type": "practitioner",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "med",
+      "claims": [
+        "C-SEC-049",
+        "C-SEC-051"
+      ],
+      "lanes": [
+        "security-governance"
+      ],
+      "notes": "Scanner method, reach definition, 2026-10-02 stats; capture at captures/secgov-karanb192-awesome-readme.md.",
+      "pinned_sha": "59a9911a836326338a831b6c8e37a7a855e405f4"
+    },
+    {
+      "id": "secgov-karanb192-grade-mjs",
+      "title": "awesome-claude-code-mods tools/grade.mjs",
+      "url": "https://github.com/karanb192/awesome-claude-code-mods/blob/59a9911a836326338a831b6c8e37a7a855e405f4/tools/grade.mjs",
+      "publisher": "karanb192",
+      "source_type": "practitioner",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-SEC-049",
+        "C-SEC-050"
+      ],
+      "lanes": [
+        "security-governance"
+      ],
+      "notes": "Exact reach-level rule table; capture at captures/secgov-karanb192-grade-mjs.md.",
+      "pinned_sha": "59a9911a836326338a831b6c8e37a7a855e405f4"
+    },
+    {
+      "id": "secgov-karanb192-issue-21",
+      "title": "2.1.287: reserved claude- names and escape-free rewrites break listed mods",
+      "url": "https://github.com/karanb192/awesome-claude-code-mods/issues/21",
+      "publisher": "muhammadolim (community)",
+      "source_type": "practitioner",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "med",
+      "claims": [
+        "C-SEC-012"
+      ],
+      "lanes": [
+        "security-governance"
+      ],
+      "notes": "Reserved-name rule (confirmed by local validate) and escape-free rewrite rule (unverified)."
+    },
+    {
+      "id": "types-2-1-288",
+      "title": "Claude Code function hooks TypeScript declarations (written by Claude Code 2.1.288)",
+      "url": "https://code.claude.com/docs/en/plugins/mods/reference",
+      "publisher": "Anthropic (generated by the Claude Code binary)",
+      "source_type": "primary",
+      "published": "2026-10-03 (build 2.1.288)",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-API-001",
+        "C-API-002",
+        "C-API-003",
+        "C-API-004",
+        "C-API-005",
+        "C-API-006",
+        "C-API-008",
+        "C-API-009",
+        "C-API-010",
+        "C-API-011",
+        "C-API-012",
+        "C-API-013",
+        "C-API-014",
+        "C-API-015",
+        "C-API-016",
+        "C-API-017",
+        "C-API-018",
+        "C-API-019",
+        "C-API-020",
+        "C-API-021",
+        "C-API-022",
+        "C-API-023",
+        "C-API-024",
+        "C-API-025",
+        "C-API-026",
+        "C-API-027",
+        "C-API-028",
+        "C-API-029",
+        "C-API-030",
+        "C-API-031",
+        "C-API-032",
+        "C-API-033",
+        "C-API-034",
+        "C-API-036",
+        "C-API-037",
+        "C-API-038",
+        "C-API-039",
+        "C-API-040",
+        "C-API-041",
+        "C-API-042",
+        "C-API-043",
+        "C-API-044",
+        "C-API-045",
+        "C-API-046",
+        "C-API-047",
+        "C-API-048",
+        "C-API-049",
+        "C-API-050",
+        "C-API-051",
+        "C-API-052",
+        "C-API-053",
+        "C-API-054",
+        "C-API-055",
+        "C-API-056",
+        "C-API-057",
+        "C-API-058",
+        "C-API-059",
+        "C-API-060",
+        "C-ECO-055",
+        "C-LIF-003",
+        "C-LIF-017",
+        "C-LIF-023",
+        "C-LIF-024",
+        "C-LIF-025",
+        "C-LIF-026",
+        "C-LIF-028",
+        "C-LIF-029",
+        "C-LIF-030",
+        "C-LIF-031",
+        "C-LIF-032",
+        "C-LIF-039",
+        "C-LIF-040",
+        "C-LIF-043",
+        "C-LIF-055",
+        "C-LIF-056",
+        "C-LIF-057",
+        "C-LIF-058",
+        "C-LIF-060",
+        "C-PAT-015",
+        "C-PAT-016",
+        "C-PAT-017",
+        "C-PAT-018",
+        "C-PAT-022",
+        "C-PAT-028",
+        "C-PAT-030",
+        "C-PAT-031",
+        "C-PAT-033",
+        "C-PAT-045",
+        "C-PAT-046",
+        "C-PAT-047",
+        "C-PAT-048",
+        "C-PAT-058",
+        "C-SEC-004",
+        "C-SEC-005",
+        "C-SEC-006",
+        "C-SEC-013",
+        "C-SEC-014",
+        "C-SEC-015",
+        "C-SEC-016",
+        "C-SEC-017",
+        "C-SEC-031",
+        "C-SEC-033",
+        "C-SEC-036",
+        "C-SEC-039",
+        "C-SEC-040",
+        "C-SEC-041",
+        "C-SEC-042",
+        "C-SEC-045",
+        "C-SEC-059",
+        "C-SEC-061",
+        "C-SEC-062"
+      ],
+      "lanes": [
+        "api-and-events",
+        "ecosystem",
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "14,973 lines; cite as types 2.1.288 L<start>-<end>. Companion files claude-code-tools/index.d.ts (built-in tool inputs) and claude-code-mcp/index.d.ts (empty MCP map)."
+    }
+  ],
+  "local_captures": [
+    {
+      "id": "compass-report",
+      "title": "Claude Code Mods seed report (compass)",
+      "publisher": "unknown (seed research report)",
+      "source_type": "supporting",
+      "published": "2026-10-02",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-API-033",
+        "C-API-050",
+        "C-API-058",
+        "C-ECO-031",
+        "C-ECO-040",
+        "C-ECO-047",
+        "C-LIF-034",
+        "C-PAT-024",
+        "C-SEC-061",
+        "C-SEC-062"
+      ],
+      "lanes": [
+        "api-and-events",
+        "ecosystem",
+        "lifecycle",
+        "patterns-and-ideas",
+        "security-governance"
+      ],
+      "notes": "Lead list only. Section 1 checked line by line against docs and typings; three imprecisions logged in contradictions.md.",
+      "capture": "not redistributed"
+    },
+    {
+      "id": "eco-static-scan",
+      "title": "Ecosystem lane static scan 2026-10-03",
+      "publisher": "ecosystem lane",
+      "source_type": "primary",
+      "published": "2026-10-03",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "medium",
+      "claims": [
+        "C-ECO-003",
+        "C-ECO-025",
+        "C-ECO-028",
+        "C-ECO-032",
+        "C-ECO-034",
+        "C-ECO-037",
+        "C-ECO-041",
+        "C-ECO-042",
+        "C-ECO-044",
+        "C-ECO-045",
+        "C-ECO-046",
+        "C-ECO-055"
+      ],
+      "lanes": [
+        "ecosystem"
+      ],
+      "notes": "Regex over source at pinned SHAs; nothing executed; misses multi-line calls.",
+      "capture": "not redistributed"
+    },
+    {
+      "id": "lif-plugin-authoring-skill",
+      "title": "plugin-authoring bundled skill (2.1.288)",
+      "publisher": "Anthropic (bundled with Claude Code 2.1.288)",
+      "source_type": "official",
+      "published": "2026-10-03",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-LIF-002",
+        "C-LIF-004",
+        "C-LIF-007",
+        "C-LIF-008",
+        "C-LIF-011",
+        "C-LIF-012",
+        "C-LIF-013",
+        "C-LIF-014",
+        "C-LIF-017",
+        "C-LIF-018",
+        "C-LIF-029",
+        "C-LIF-040",
+        "C-LIF-042",
+        "C-LIF-058",
+        "C-LIF-060"
+      ],
+      "lanes": [
+        "lifecycle"
+      ],
+      "notes": "SKILL.md body, reference.md and examples captured verbatim with per-session paths redacted.",
+      "capture": "not redistributed"
+    },
+    {
+      "id": "secgov-validate-probes",
+      "title": "Static claude plugin validate probes on 2.1.288",
+      "publisher": "this lane (local experiment)",
+      "source_type": "primary",
+      "published": "2026-10-03",
+      "retrieved": "2026-10-03",
+      "refresh_due": "2026-11-02",
+      "confidence": "high",
+      "claims": [
+        "C-SEC-006",
+        "C-SEC-007",
+        "C-SEC-008",
+        "C-SEC-009",
+        "C-SEC-010",
+        "C-SEC-011",
+        "C-SEC-012"
+      ],
+      "lanes": [
+        "security-governance"
+      ],
+      "notes": "Validate output for exfil shape, evasion shapes, reserved names, settings hooks and bin/, and the two example mods. No mod loaded.",
+      "capture": "not redistributed"
+    }
+  ]
+}

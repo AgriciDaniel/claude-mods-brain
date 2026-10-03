@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.DS_Store
+.env
+.env.*
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.gate-logs/
+.raw/captures/
+.raw/sources/

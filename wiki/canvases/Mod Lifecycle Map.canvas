@@ -1,0 +1,266 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "1. Learn",
+      "x": -20,
+      "y": -60,
+      "width": 380,
+      "height": 470,
+      "color": "4"
+    },
+    {
+      "id": "anat",
+      "x": 0,
+      "y": 0,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Mod Anatomy.md"
+    },
+    {
+      "id": "chain",
+      "x": 0,
+      "y": 130,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Hook Middleware Chain.md"
+    },
+    {
+      "id": "cheat",
+      "x": 0,
+      "y": 260,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/deliverables/Mods API Cheatsheet.md"
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "2. Build",
+      "x": 400,
+      "y": -60,
+      "width": 380,
+      "height": 600,
+      "color": "5"
+    },
+    {
+      "id": "pat",
+      "x": 420,
+      "y": 0,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/deliverables/Patterns Playbook.md"
+    },
+    {
+      "id": "band",
+      "x": 420,
+      "y": 130,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/flows/Build a Status Band Flow.md"
+    },
+    {
+      "id": "guard",
+      "x": 420,
+      "y": 260,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/flows/Build a Tool Call Guard Flow.md"
+    },
+    {
+      "id": "pit",
+      "x": 420,
+      "y": 390,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/deliverables/Pitfalls Playbook.md"
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "3. Test and validate",
+      "x": 820,
+      "y": -60,
+      "width": 380,
+      "height": 470,
+      "color": "6"
+    },
+    {
+      "id": "dev",
+      "x": 840,
+      "y": 0,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Hot Reload and Dev Loop.md"
+    },
+    {
+      "id": "test",
+      "x": 840,
+      "y": 130,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/deliverables/Testing Playbook.md"
+    },
+    {
+      "id": "val",
+      "x": 840,
+      "y": 260,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Plugin Validate.md"
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "4. Ship",
+      "x": 1240,
+      "y": -60,
+      "width": 380,
+      "height": 340,
+      "color": "3"
+    },
+    {
+      "id": "pub",
+      "x": 1260,
+      "y": 0,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/flows/Publish a Mod Flow.md"
+    },
+    {
+      "id": "mkt",
+      "x": 1260,
+      "y": 130,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Marketplaces and Distribution.md"
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "5. Keep current",
+      "x": 1660,
+      "y": -60,
+      "width": 380,
+      "height": 470,
+      "color": "1"
+    },
+    {
+      "id": "drift",
+      "x": 1680,
+      "y": 0,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Versioning and API Drift.md"
+    },
+    {
+      "id": "reverify",
+      "x": 1680,
+      "y": 130,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/flows/Re-verify After Release Flow.md"
+    },
+    {
+      "id": "pin",
+      "x": 1680,
+      "y": 260,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/decisions/Version Pin Policy.md"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "fromNode": "anat",
+      "toNode": "chain"
+    },
+    {
+      "id": "e1",
+      "fromNode": "chain",
+      "toNode": "cheat"
+    },
+    {
+      "id": "e2",
+      "fromNode": "cheat",
+      "toNode": "pat",
+      "label": "then build"
+    },
+    {
+      "id": "e3",
+      "fromNode": "pat",
+      "toNode": "band"
+    },
+    {
+      "id": "e4",
+      "fromNode": "band",
+      "toNode": "guard"
+    },
+    {
+      "id": "e5",
+      "fromNode": "guard",
+      "toNode": "pit",
+      "label": "avoid"
+    },
+    {
+      "id": "e6",
+      "fromNode": "pit",
+      "toNode": "dev",
+      "label": "then test"
+    },
+    {
+      "id": "e7",
+      "fromNode": "dev",
+      "toNode": "test"
+    },
+    {
+      "id": "e8",
+      "fromNode": "test",
+      "toNode": "val"
+    },
+    {
+      "id": "e9",
+      "fromNode": "val",
+      "toNode": "pub",
+      "label": "then ship"
+    },
+    {
+      "id": "e10",
+      "fromNode": "pub",
+      "toNode": "mkt"
+    },
+    {
+      "id": "e11",
+      "fromNode": "mkt",
+      "toNode": "drift",
+      "label": "every release"
+    },
+    {
+      "id": "e12",
+      "fromNode": "drift",
+      "toNode": "reverify"
+    },
+    {
+      "id": "e13",
+      "fromNode": "reverify",
+      "toNode": "pin"
+    }
+  ]
+}

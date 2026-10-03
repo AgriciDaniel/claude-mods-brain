@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mods-brain.api-drift.v1",
+  "title": "Drift between two mods API surfaces",
+  "type": "object",
+  "required": [
+    "schema",
+    "from_version",
+    "to_version",
+    "change_count",
+    "sections"
+  ],
+  "properties": {
+    "schema": {
+      "const": "mods-brain.api-drift.v1"
+    },
+    "from_version": {
+      "type": "string"
+    },
+    "to_version": {
+      "type": "string"
+    },
+    "typings_identical": {
+      "type": "boolean"
+    },
+    "change_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sections": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "added",
+          "removed"
+        ],
+        "properties": {
+          "added": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "removed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "affected_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "signatures_changed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "old",
+          "new"
+        ]
+      }
+    },
+    "manual_review_required": {
+      "type": "boolean",
+      "description": "typings hash changed but no named element, signature, or limit line did"
+    }
+  }
+}

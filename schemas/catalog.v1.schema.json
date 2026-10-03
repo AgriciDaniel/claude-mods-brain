@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mods-brain.catalog.v1",
+  "title": "Curated catalog of community mods (input)",
+  "type": "object",
+  "required": [
+    "schema",
+    "as_of",
+    "mods"
+  ],
+  "properties": {
+    "schema": {
+      "const": "mods-brain.catalog.v1"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "mods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "repo",
+          "verdict"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "pinned_sha": {
+            "type": "string"
+          },
+          "what": {
+            "type": "string"
+          },
+          "reach": {
+            "enum": [
+              "L0",
+              "L1",
+              "L2",
+              "L3",
+              "unknown"
+            ]
+          },
+          "usage_cost": {
+            "type": "string"
+          },
+          "tested_on": {
+            "type": "string"
+          },
+          "code_reviewed": {
+            "enum": [
+              "static read",
+              "no"
+            ]
+          },
+          "verdict": {
+            "enum": [
+              "adopt",
+              "trial",
+              "avoid",
+              "watch"
+            ]
+          },
+          "verdict_reason": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

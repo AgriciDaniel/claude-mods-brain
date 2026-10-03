@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mods-brain.api-surface.v1",
+  "title": "Mods API surface imported from generated typings",
+  "type": "object",
+  "required": [
+    "schema",
+    "claude_code_version",
+    "source_sha256",
+    "events",
+    "namespaces",
+    "render_components",
+    "elements",
+    "exported_types",
+    "counts"
+  ],
+  "properties": {
+    "schema": {
+      "const": "mods-brain.api-surface.v1"
+    },
+    "claude_code_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+"
+    },
+    "source_file": {
+      "type": "string"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "line_count": {
+      "type": "integer"
+    },
+    "events": {
+      "type": "object",
+      "required": [
+        "engine",
+        "op",
+        "classic"
+      ],
+      "properties": {
+        "engine": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "line"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "line": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "summary": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "op": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "line"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "line": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "summary": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "classic": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^classic\\."
+          }
+        }
+      }
+    },
+    "namespaces": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "type": "object",
+            "required": [
+              "name",
+              "line"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "line": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "summary": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "members"
+            ],
+            "properties": {
+              "members": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "line"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "line": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "summary": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "render_components": {
+      "type": "object",
+      "required": [
+        "values"
+      ],
+      "properties": {
+        "line": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "elements": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "elements"
+        ],
+        "properties": {
+          "line": {
+            "type": "integer"
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "exported_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "counts": {
+      "type": "object"
+    },
+    "limits": {
+      "type": "array",
+      "description": "every line stating a limit: unit-bearing numbers and numeric constants",
+      "items": {
+        "type": "object",
+        "required": [
+          "line",
+          "text"
+        ],
+        "properties": {
+          "line": {
+            "type": "integer"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

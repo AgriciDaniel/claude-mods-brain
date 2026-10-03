@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mods-brain.mod-scan.v1",
+  "title": "Static footprint scan of one mod",
+  "type": "object",
+  "required": [
+    "schema",
+    "plugin",
+    "is_mod",
+    "events",
+    "calls",
+    "reach",
+    "cost_surface",
+    "red_flags",
+    "files"
+  ],
+  "properties": {
+    "schema": {
+      "const": "mods-brain.mod-scan.v1"
+    },
+    "plugin": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "module": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "is_mod": {
+      "type": "boolean"
+    },
+    "classic_hooks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "not": {
+              "pattern": "^(/|~)"
+            }
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "lines": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "calls": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer"
+      }
+    },
+    "reach": {
+      "enum": [
+        "L0",
+        "L1",
+        "L2",
+        "L3"
+      ]
+    },
+    "control_events": {
+      "type": "array"
+    },
+    "cost_surface": {
+      "type": "array"
+    },
+    "red_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "severity",
+          "detail"
+        ],
+        "properties": {
+          "severity": {
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "review",
+              "info"
+            ]
+          }
+        }
+      }
+    },
+    "validate": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  }
+}

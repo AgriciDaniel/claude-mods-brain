@@ -1,0 +1,1965 @@
+{
+  "schema": "mods-brain.api-surface.v1",
+  "claude_code_version": "2.1.288",
+  "source_file": "claude-code/index.d.ts",
+  "source_sha256": "d0531eb1b9f9a05f5da139cdce07dacf59171a8608d8a3c262902f44c368ed5e",
+  "line_count": 14973,
+  "events": {
+    "engine": [
+      {
+        "name": "tool.call",
+        "line": 3741,
+        "summary": "",
+        "signature": "'tool.call': ToolCallInput;"
+      },
+      {
+        "name": "tool.check",
+        "line": 3753,
+        "summary": "",
+        "signature": "'tool.check': ToolCheckInput;"
+      },
+      {
+        "name": "ui.render",
+        "line": 3765,
+        "summary": "",
+        "signature": "'ui.render': RenderInput;"
+      },
+      {
+        "name": "ui.resolve",
+        "line": 3774,
+        "summary": "",
+        "signature": "'ui.resolve': ResolveInput;"
+      },
+      {
+        "name": "ui.press",
+        "line": 3783,
+        "summary": "",
+        "signature": "'ui.press': UiPressArgument;"
+      },
+      {
+        "name": "ui.input",
+        "line": 3792,
+        "summary": "",
+        "signature": "'ui.input': UiInputArgument;"
+      },
+      {
+        "name": "ui.select",
+        "line": 3801,
+        "summary": "",
+        "signature": "'ui.select': UiSelectArgument;"
+      },
+      {
+        "name": "ui.message",
+        "line": 3810,
+        "summary": "",
+        "signature": "'ui.message': UiMessageArgument;"
+      },
+      {
+        "name": "ui.scroll",
+        "line": 3822,
+        "summary": "",
+        "signature": "'ui.scroll': UiScrollInput;"
+      },
+      {
+        "name": "ui.focus",
+        "line": 3834,
+        "summary": "",
+        "signature": "'ui.focus': UiFocusInput;"
+      },
+      {
+        "name": "agent.offer",
+        "line": 3845,
+        "summary": "",
+        "signature": "'agent.offer': AgentOfferInput;"
+      },
+      {
+        "name": "agent.spawn",
+        "line": 3854,
+        "summary": "",
+        "signature": "'agent.spawn': AgentSpawnInput;"
+      },
+      {
+        "name": "prompt.submit",
+        "line": 3863,
+        "summary": "",
+        "signature": "'prompt.submit': PromptSubmitInput;"
+      },
+      {
+        "name": "prompt.fill",
+        "line": 3875,
+        "summary": "",
+        "signature": "'prompt.fill': PromptFillInput;"
+      },
+      {
+        "name": "prompt.suggest",
+        "line": 3887,
+        "summary": "",
+        "signature": "'prompt.suggest': PromptSuggestInput;"
+      },
+      {
+        "name": "prompt.edit",
+        "line": 3899,
+        "summary": "",
+        "signature": "'prompt.edit': PromptEditInput;"
+      },
+      {
+        "name": "prompt.section",
+        "line": 3911,
+        "summary": "",
+        "signature": "'prompt.section': PromptSectionInput;"
+      },
+      {
+        "name": "prompt.context",
+        "line": 3923,
+        "summary": "",
+        "signature": "'prompt.context': PromptContextInput;"
+      },
+      {
+        "name": "prompt.compose",
+        "line": 3932,
+        "summary": "",
+        "signature": "'prompt.compose': PromptComposeInput;"
+      },
+      {
+        "name": "prompt.attachment",
+        "line": 3944,
+        "summary": "",
+        "signature": "'prompt.attachment': PromptAttachmentInput;"
+      },
+      {
+        "name": "tool.describe",
+        "line": 3958,
+        "summary": "",
+        "signature": "'tool.describe': ToolDescribeInput;"
+      },
+      {
+        "name": "command.run",
+        "line": 3970,
+        "summary": "",
+        "signature": "'command.run': CommandRunInput;"
+      },
+      {
+        "name": "command.describe",
+        "line": 3982,
+        "summary": "",
+        "signature": "'command.describe': CommandDescribeInput;"
+      },
+      {
+        "name": "config.set",
+        "line": 3994,
+        "summary": "",
+        "signature": "'config.set': ConfigSetInput;"
+      },
+      {
+        "name": "config.describe",
+        "line": 4006,
+        "summary": "",
+        "signature": "'config.describe': ConfigDescribeInput;"
+      },
+      {
+        "name": "telemetry.log",
+        "line": 4018,
+        "summary": "",
+        "signature": "'telemetry.log': TelemetryLogInput;"
+      },
+      {
+        "name": "telemetry.mark",
+        "line": 4029,
+        "summary": "",
+        "signature": "'telemetry.mark': TelemetryMarkInput;"
+      },
+      {
+        "name": "skill.prompt",
+        "line": 4040,
+        "summary": "",
+        "signature": "'skill.prompt': SkillPromptInput;"
+      },
+      {
+        "name": "attribution.text",
+        "line": 4051,
+        "summary": "",
+        "signature": "'attribution.text': AttributionTextInput;"
+      },
+      {
+        "name": "session.start",
+        "line": 4063,
+        "summary": "",
+        "signature": "'session.start': SessionStartInput;"
+      },
+      {
+        "name": "session.receive",
+        "line": 4075,
+        "summary": "",
+        "signature": "'session.receive': SessionReceiveInput;"
+      },
+      {
+        "name": "session.append",
+        "line": 4087,
+        "summary": "",
+        "signature": "'session.append': SessionAppendInput;"
+      },
+      {
+        "name": "session.send",
+        "line": 4099,
+        "summary": "",
+        "signature": "'session.send': SessionSendInput;"
+      },
+      {
+        "name": "session.compact",
+        "line": 4111,
+        "summary": "",
+        "signature": "'session.compact': SessionCompactInput;"
+      },
+      {
+        "name": "session.attach",
+        "line": 4123,
+        "summary": "",
+        "signature": "'session.attach': SessionAttachInput;"
+      },
+      {
+        "name": "session.detach",
+        "line": 4131,
+        "summary": "",
+        "signature": "'session.detach': SessionDetachInput;"
+      },
+      {
+        "name": "session.measure",
+        "line": 4143,
+        "summary": "",
+        "signature": "'session.measure': SessionMeasureInput;"
+      },
+      {
+        "name": "session.end",
+        "line": 4155,
+        "summary": "",
+        "signature": "'session.end': SessionEndInput;"
+      },
+      {
+        "name": "plugin.register",
+        "line": 4167,
+        "summary": "",
+        "signature": "'plugin.register': PluginRegisterInput;"
+      },
+      {
+        "name": "turn.start",
+        "line": 4172,
+        "summary": "",
+        "signature": "'turn.start': TurnStartInput;"
+      },
+      {
+        "name": "turn.step",
+        "line": 4181,
+        "summary": "",
+        "signature": "'turn.step': TurnStepInput;"
+      },
+      {
+        "name": "turn.complete",
+        "line": 4190,
+        "summary": "",
+        "signature": "'turn.complete': TurnCompleteInput;"
+      },
+      {
+        "name": "engine.create",
+        "line": 4199,
+        "summary": "",
+        "signature": "'engine.create': EngineCreateInput;"
+      }
+    ],
+    "op": [
+      {
+        "name": "model.complete",
+        "line": 6410,
+        "summary": "",
+        "signature": "'model.complete': ModelCompleteRequest;"
+      },
+      {
+        "name": "model.classify",
+        "line": 6414,
+        "summary": "",
+        "signature": "'model.classify': {"
+      },
+      {
+        "name": "model.fork",
+        "line": 6422,
+        "summary": "",
+        "signature": "'model.fork': ModelForkRequest;"
+      },
+      {
+        "name": "audio.play",
+        "line": 6427,
+        "summary": "",
+        "signature": "'audio.play': {"
+      },
+      {
+        "name": "audio.speak",
+        "line": 6435,
+        "summary": "",
+        "signature": "'audio.speak': SpeakRequest;"
+      },
+      {
+        "name": "mcp.call",
+        "line": 6439,
+        "summary": "",
+        "signature": "'mcp.call': {"
+      },
+      {
+        "name": "mcp.connect",
+        "line": 6447,
+        "summary": "",
+        "signature": "'mcp.connect': {"
+      },
+      {
+        "name": "session.cwd",
+        "line": 6453,
+        "summary": "",
+        "signature": "'session.cwd': NoArgs;"
+      },
+      {
+        "name": "session.root",
+        "line": 6457,
+        "summary": "",
+        "signature": "'session.root': NoArgs;"
+      },
+      {
+        "name": "session.model",
+        "line": 6461,
+        "summary": "",
+        "signature": "'session.model': NoArgs;"
+      },
+      {
+        "name": "session.turns",
+        "line": 6465,
+        "summary": "",
+        "signature": "'session.turns': NoArgs;"
+      },
+      {
+        "name": "session.id",
+        "line": 6469,
+        "summary": "",
+        "signature": "'session.id': NoArgs;"
+      },
+      {
+        "name": "session.messages",
+        "line": 6474,
+        "summary": "",
+        "signature": "'session.messages': SessionMessagesArgs;"
+      },
+      {
+        "name": "session.repo",
+        "line": 6478,
+        "summary": "",
+        "signature": "'session.repo': NoArgs;"
+      },
+      {
+        "name": "session.surface",
+        "line": 6484,
+        "summary": "",
+        "signature": "'session.surface': NoArgs;"
+      },
+      {
+        "name": "session.surfaces",
+        "line": 6488,
+        "summary": "",
+        "signature": "'session.surfaces': NoArgs;"
+      },
+      {
+        "name": "session.authorize",
+        "line": 6492,
+        "summary": "",
+        "signature": "'session.authorize': NoArgs;"
+      },
+      {
+        "name": "session.usage",
+        "line": 6496,
+        "summary": "",
+        "signature": "'session.usage': SessionUsageArgs;"
+      },
+      {
+        "name": "session.version",
+        "line": 6500,
+        "summary": "",
+        "signature": "'session.version': NoArgs;"
+      },
+      {
+        "name": "turn.abort",
+        "line": 6504,
+        "summary": "",
+        "signature": "'turn.abort': {"
+      },
+      {
+        "name": "prompt.read",
+        "line": 6510,
+        "summary": "",
+        "signature": "'prompt.read': NoArgs;"
+      },
+      {
+        "name": "tool.list",
+        "line": 6514,
+        "summary": "",
+        "signature": "'tool.list': NoArgs;"
+      },
+      {
+        "name": "tool.register",
+        "line": 6518,
+        "summary": "",
+        "signature": "'tool.register': Required<ToolSpec>;"
+      },
+      {
+        "name": "command.list",
+        "line": 6522,
+        "summary": "",
+        "signature": "'command.list': NoArgs;"
+      },
+      {
+        "name": "command.register",
+        "line": 6526,
+        "summary": "",
+        "signature": "'command.register': CommandSpec;"
+      },
+      {
+        "name": "config.list",
+        "line": 6530,
+        "summary": "",
+        "signature": "'config.list': NoArgs;"
+      },
+      {
+        "name": "agent.list",
+        "line": 6534,
+        "summary": "",
+        "signature": "'agent.list': NoArgs;"
+      },
+      {
+        "name": "agent.register",
+        "line": 6539,
+        "summary": "",
+        "signature": "'agent.register': AgentSpec;"
+      },
+      {
+        "name": "ui.toast",
+        "line": 6543,
+        "summary": "",
+        "signature": "'ui.toast': {"
+      },
+      {
+        "name": "ui.status",
+        "line": 6550,
+        "summary": "",
+        "signature": "'ui.status': {"
+      },
+      {
+        "name": "ui.log",
+        "line": 6557,
+        "summary": "",
+        "signature": "'ui.log': {"
+      },
+      {
+        "name": "ui.notice",
+        "line": 6564,
+        "summary": "",
+        "signature": "'ui.notice': {"
+      },
+      {
+        "name": "ui.invalidate",
+        "line": 6571,
+        "summary": "",
+        "signature": "'ui.invalidate': {"
+      },
+      {
+        "name": "ui.open",
+        "line": 6578,
+        "summary": "",
+        "signature": "'ui.open': PaneOpenArgs;"
+      },
+      {
+        "name": "ui.close",
+        "line": 6583,
+        "summary": "",
+        "signature": "'ui.close': PaneCloseInput;"
+      },
+      {
+        "name": "ui.panes",
+        "line": 6587,
+        "summary": "",
+        "signature": "'ui.panes': NoArgs;"
+      },
+      {
+        "name": "ui.selection",
+        "line": 6591,
+        "summary": "",
+        "signature": "'ui.selection': NoArgs;"
+      },
+      {
+        "name": "ui.copy",
+        "line": 6596,
+        "summary": "",
+        "signature": "'ui.copy': UiCopyArgs;"
+      },
+      {
+        "name": "ui.blit",
+        "line": 6601,
+        "summary": "",
+        "signature": "'ui.blit': UiBlitArgs;"
+      },
+      {
+        "name": "fs.read",
+        "line": 6606,
+        "summary": "",
+        "signature": "'fs.read': {"
+      },
+      {
+        "name": "fs.write",
+        "line": 6613,
+        "summary": "",
+        "signature": "'fs.write': {"
+      },
+      {
+        "name": "fs.list",
+        "line": 6620,
+        "summary": "",
+        "signature": "'fs.list': {"
+      },
+      {
+        "name": "fs.exists",
+        "line": 6626,
+        "summary": "",
+        "signature": "'fs.exists': {"
+      },
+      {
+        "name": "fs.stat",
+        "line": 6633,
+        "summary": "",
+        "signature": "'fs.stat': {"
+      },
+      {
+        "name": "fs.ancestors",
+        "line": 6640,
+        "summary": "",
+        "signature": "'fs.ancestors': FsAncestorsRequest;"
+      },
+      {
+        "name": "store.get",
+        "line": 6644,
+        "summary": "",
+        "signature": "'store.get': {"
+      },
+      {
+        "name": "store.set",
+        "line": 6650,
+        "summary": "",
+        "signature": "'store.set': {"
+      },
+      {
+        "name": "store.delete",
+        "line": 6657,
+        "summary": "",
+        "signature": "'store.delete': {"
+      },
+      {
+        "name": "store.keys",
+        "line": 6663,
+        "summary": "",
+        "signature": "'store.keys': NoArgs;"
+      },
+      {
+        "name": "state.get",
+        "line": 6668,
+        "summary": "",
+        "signature": "'state.get': StateGetEvent;"
+      },
+      {
+        "name": "state.set",
+        "line": 6676,
+        "summary": "",
+        "signature": "'state.set': StateSetEvent;"
+      },
+      {
+        "name": "clock.now",
+        "line": 6680,
+        "summary": "",
+        "signature": "'clock.now': NoArgs;"
+      },
+      {
+        "name": "clock.sleep",
+        "line": 6685,
+        "summary": "",
+        "signature": "'clock.sleep': ClockWait;"
+      },
+      {
+        "name": "clock.after",
+        "line": 6690,
+        "summary": "",
+        "signature": "'clock.after': ClockWait;"
+      },
+      {
+        "name": "clock.every",
+        "line": 6695,
+        "summary": "",
+        "signature": "'clock.every': ClockWait;"
+      },
+      {
+        "name": "http.fetch",
+        "line": 6699,
+        "summary": "",
+        "signature": "'http.fetch': {"
+      },
+      {
+        "name": "process.run",
+        "line": 6706,
+        "summary": "",
+        "signature": "'process.run': {"
+      },
+      {
+        "name": "process.spawn",
+        "line": 6713,
+        "summary": "",
+        "signature": "'process.spawn': ProcessSpawnRequest;"
+      },
+      {
+        "name": "settings.read",
+        "line": 6717,
+        "summary": "",
+        "signature": "'settings.read': SettingsReadArgs;"
+      },
+      {
+        "name": "env.get",
+        "line": 6721,
+        "summary": "",
+        "signature": "'env.get': {"
+      },
+      {
+        "name": "env.set",
+        "line": 6728,
+        "summary": "",
+        "signature": "'env.set': {"
+      }
+    ],
+    "classic": [
+      "classic.ConfigChange",
+      "classic.CwdChanged",
+      "classic.DirectoryAdded",
+      "classic.Elicitation",
+      "classic.ElicitationResult",
+      "classic.FileChanged",
+      "classic.InstructionsLoaded",
+      "classic.MessageDisplay",
+      "classic.Notification",
+      "classic.PermissionDenied",
+      "classic.PermissionRequest",
+      "classic.PostCompact",
+      "classic.PostModelSwitch",
+      "classic.PostToolBatch",
+      "classic.PostToolUse",
+      "classic.PostToolUseFailure",
+      "classic.PreCompact",
+      "classic.PreModelSwitch",
+      "classic.PreToolUse",
+      "classic.SessionEnd",
+      "classic.SessionStart",
+      "classic.Setup",
+      "classic.Stop",
+      "classic.StopFailure",
+      "classic.SubagentStart",
+      "classic.SubagentStop",
+      "classic.TaskCompleted",
+      "classic.TaskCreated",
+      "classic.TeammateIdle",
+      "classic.UserPromptExpansion",
+      "classic.UserPromptSubmit",
+      "classic.WorktreeCreate",
+      "classic.WorktreeRemove"
+    ]
+  },
+  "namespaces": [
+    {
+      "name": "plugin",
+      "line": 2136,
+      "summary": "",
+      "signature": "plugin: {",
+      "members": [
+        {
+          "name": "name",
+          "line": 2140,
+          "summary": "",
+          "signature": "name: string;"
+        },
+        {
+          "name": "root",
+          "line": 2144,
+          "summary": "",
+          "signature": "root: string;"
+        }
+      ]
+    },
+    {
+      "name": "ui",
+      "line": 2150,
+      "summary": "",
+      "signature": "ui: {",
+      "members": [
+        {
+          "name": "notice",
+          "line": 2163,
+          "summary": "",
+          "signature": "notice: (tool_use_id: string, text: string | undefined) => void;"
+        },
+        {
+          "name": "invalidate",
+          "line": 2177,
+          "summary": "",
+          "signature": "invalidate: (event: InvalidatableEventName) => void;"
+        },
+        {
+          "name": "blit",
+          "line": 2198,
+          "summary": "",
+          "signature": "blit: (args: UiBlitArgs) => Promise<UiBlitResult>;"
+        },
+        {
+          "name": "resolve",
+          "line": 2214,
+          "summary": "",
+          "signature": "resolve: <E extends ResolveInput>(e: E) => Elements[E['surface']];"
+        },
+        {
+          "name": "log",
+          "line": 2230,
+          "summary": "",
+          "signature": "log: (text: string, options?: UiLogOptions) => void;"
+        },
+        {
+          "name": "ask",
+          "line": 2246,
+          "summary": "",
+          "signature": "ask: (question: string, options?: readonly string[] | AskOptions) => Promise<string>;"
+        },
+        {
+          "name": "toast",
+          "line": 2261,
+          "summary": "",
+          "signature": "toast: (text: string, options?: ToastOptions) => void;"
+        },
+        {
+          "name": "status",
+          "line": 2273,
+          "summary": "",
+          "signature": "status: (text: string | undefined) => void;"
+        },
+        {
+          "name": "open",
+          "line": 2296,
+          "summary": "",
+          "signature": "open: (pane: PaneOpenArgs) => Promise<UiOpenResult>;"
+        },
+        {
+          "name": "close",
+          "line": 2310,
+          "summary": "",
+          "signature": "close: (pane: PaneCloseArgs) => Promise<void>;"
+        },
+        {
+          "name": "panes",
+          "line": 2323,
+          "summary": "",
+          "signature": "panes: () => Promise<readonly UiPane[]>;"
+        },
+        {
+          "name": "scroll",
+          "line": 2338,
+          "summary": "",
+          "signature": "scroll: (args: UiScrollArgs) => Promise<UiScrollResult>;"
+        },
+        {
+          "name": "focus",
+          "line": 2354,
+          "summary": "",
+          "signature": "focus: (args: UiFocusArgs) => Promise<UiFocusResult>;"
+        },
+        {
+          "name": "copy",
+          "line": 2368,
+          "summary": "",
+          "signature": "copy: (args: UiCopyArgs) => Promise<UiCopyResult>;"
+        },
+        {
+          "name": "selection",
+          "line": 2382,
+          "summary": "",
+          "signature": "selection: () => Promise<UiSelection | undefined>;"
+        }
+      ]
+    },
+    {
+      "name": "model",
+      "line": 2387,
+      "summary": "",
+      "signature": "model: {",
+      "members": [
+        {
+          "name": "complete",
+          "line": 2414,
+          "summary": "",
+          "signature": "complete: (request: ModelCompleteRequest, options?: ModelCompleteOptions) => Promise<ModelCompleteResult>;"
+        },
+        {
+          "name": "fork",
+          "line": 2433,
+          "summary": "",
+          "signature": "fork: (request: ModelForkRequest) => Promise<ModelForkResult>;"
+        },
+        {
+          "name": "classify",
+          "line": 2452,
+          "summary": "",
+          "signature": "classify: (text: string, labels: readonly string[], options?: ClassifyOptions) => Promise<string | undefined>;"
+        }
+      ]
+    },
+    {
+      "name": "audio",
+      "line": 2457,
+      "summary": "",
+      "signature": "audio: {",
+      "members": [
+        {
+          "name": "play",
+          "line": 2473,
+          "summary": "",
+          "signature": "play: (clip: AudioClip, options?: PlayOptions) => Promise<void>;"
+        },
+        {
+          "name": "speak",
+          "line": 2487,
+          "summary": "",
+          "signature": "speak: (text: string, options?: SpeakOptions) => Promise<SpeakResult>;"
+        }
+      ]
+    },
+    {
+      "name": "mcp",
+      "line": 2493,
+      "summary": "",
+      "signature": "mcp: {",
+      "members": [
+        {
+          "name": "call",
+          "line": 2514,
+          "summary": "",
+          "signature": "call: (server: string, tool: string, args?: Record<string, unknown>) => Promise<McpToolResult>;"
+        },
+        {
+          "name": "connect",
+          "line": 2528,
+          "summary": "",
+          "signature": "connect: (server: string) => Promise<McpConnectResult>;"
+        }
+      ]
+    },
+    {
+      "name": "session",
+      "line": 2534,
+      "summary": "",
+      "signature": "session: {",
+      "members": [
+        {
+          "name": "messages",
+          "line": 2567,
+          "summary": "",
+          "signature": "messages: SessionMessagesCall;"
+        },
+        {
+          "name": "cwd",
+          "line": 2571,
+          "summary": "",
+          "signature": "cwd: () => Promise<string>;"
+        },
+        {
+          "name": "root",
+          "line": 2579,
+          "summary": "",
+          "signature": "root: () => Promise<string>;"
+        },
+        {
+          "name": "model",
+          "line": 2583,
+          "summary": "",
+          "signature": "model: () => Promise<string>;"
+        },
+        {
+          "name": "turns",
+          "line": 2588,
+          "summary": "",
+          "signature": "turns: () => Promise<number>;"
+        },
+        {
+          "name": "id",
+          "line": 2592,
+          "summary": "",
+          "signature": "id: () => Promise<string>;"
+        },
+        {
+          "name": "repo",
+          "line": 2600,
+          "summary": "",
+          "signature": "repo: () => Promise<SessionRepo | null>;"
+        },
+        {
+          "name": "surfaces",
+          "line": 2612,
+          "summary": "",
+          "signature": "surfaces: () => Promise<readonly RenderSurface[]>;"
+        },
+        {
+          "name": "surface",
+          "line": 2620,
+          "summary": "",
+          "signature": "surface: () => Promise<RenderSurface | null>;"
+        },
+        {
+          "name": "usage",
+          "line": 2642,
+          "summary": "",
+          "signature": "usage: (args?: SessionUsageArgs) => Promise<SessionUsage>;"
+        },
+        {
+          "name": "version",
+          "line": 2659,
+          "summary": "",
+          "signature": "version: () => Promise<SessionVersion>;"
+        },
+        {
+          "name": "compact",
+          "line": 2671,
+          "summary": "",
+          "signature": "compact: EventCalls['session']['compact'];"
+        },
+        {
+          "name": "send",
+          "line": 2685,
+          "summary": "",
+          "signature": "send: EventCalls['session']['send'];"
+        },
+        {
+          "name": "append",
+          "line": 2697,
+          "summary": "",
+          "signature": "append: (args: SessionAppendArgs) => Promise<SessionAppendResult>;"
+        },
+        {
+          "name": "authorize",
+          "line": 2709,
+          "summary": "",
+          "signature": "authorize: () => Promise<SessionAuthorization>;"
+        }
+      ]
+    },
+    {
+      "name": "turn",
+      "line": 2714,
+      "summary": "",
+      "signature": "turn: {",
+      "members": [
+        {
+          "name": "abort",
+          "line": 2727,
+          "summary": "",
+          "signature": "abort: (input: OpEventOf['turn.abort']) => Promise<void>;"
+        }
+      ]
+    },
+    {
+      "name": "prompt",
+      "line": 2733,
+      "summary": "",
+      "signature": "prompt: {",
+      "members": [
+        {
+          "name": "submit",
+          "line": 2745,
+          "summary": "",
+          "signature": "submit: EventCalls['prompt']['submit'];"
+        },
+        {
+          "name": "read",
+          "line": 2756,
+          "summary": "",
+          "signature": "read: () => Promise<PromptBox>;"
+        },
+        {
+          "name": "fill",
+          "line": 2770,
+          "summary": "",
+          "signature": "fill: (input: PromptFillArgs) => Promise<PromptFilled>;"
+        },
+        {
+          "name": "suggest",
+          "line": 2782,
+          "summary": "",
+          "signature": "suggest: EventCalls['prompt']['suggest'];"
+        },
+        {
+          "name": "compose",
+          "line": 2794,
+          "summary": "",
+          "signature": "compose: EventCalls['prompt']['compose'];"
+        }
+      ]
+    },
+    {
+      "name": "tool",
+      "line": 2799,
+      "summary": "",
+      "signature": "tool: {",
+      "members": [
+        {
+          "name": "list",
+          "line": 2807,
+          "summary": "",
+          "signature": "list: () => Promise<ToolInfo[]>;"
+        },
+        {
+          "name": "call",
+          "line": 2819,
+          "summary": "",
+          "signature": "call: EventCalls['tool']['call'];"
+        },
+        {
+          "name": "check",
+          "line": 2831,
+          "summary": "",
+          "signature": "check: EventCalls['tool']['check'];"
+        },
+        {
+          "name": "register",
+          "line": 2847,
+          "summary": "",
+          "signature": "register: (tool: ToolSpec) => Promise<OpValueOf['tool.register']>;"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "line": 2852,
+      "summary": "",
+      "signature": "command: {",
+      "members": [
+        {
+          "name": "list",
+          "line": 2860,
+          "summary": "",
+          "signature": "list: () => Promise<CommandInfo[]>;"
+        },
+        {
+          "name": "run",
+          "line": 2872,
+          "summary": "",
+          "signature": "run: EventCalls['command']['run'];"
+        },
+        {
+          "name": "register",
+          "line": 2887,
+          "summary": "",
+          "signature": "register: (command: CommandSpec) => Promise<OpValueOf['command.register']>;"
+        }
+      ]
+    },
+    {
+      "name": "config",
+      "line": 2893,
+      "summary": "",
+      "signature": "config: {",
+      "members": [
+        {
+          "name": "list",
+          "line": 2904,
+          "summary": "",
+          "signature": "list: () => Promise<ConfigRow[]>;"
+        },
+        {
+          "name": "set",
+          "line": 2918,
+          "summary": "",
+          "signature": "set: EventCalls['config']['set'];"
+        }
+      ]
+    },
+    {
+      "name": "telemetry",
+      "line": 2924,
+      "summary": "",
+      "signature": "telemetry: {",
+      "members": [
+        {
+          "name": "log",
+          "line": 2942,
+          "summary": "",
+          "signature": "log: (entry: TelemetryLogArgs) => Promise<void>;"
+        },
+        {
+          "name": "mark",
+          "line": 2957,
+          "summary": "",
+          "signature": "mark: (entry: TelemetryMarkInput) => Promise<void>;"
+        }
+      ]
+    },
+    {
+      "name": "agent",
+      "line": 2962,
+      "summary": "",
+      "signature": "agent: {",
+      "members": [
+        {
+          "name": "spawn",
+          "line": 2974,
+          "summary": "",
+          "signature": "spawn: EventCalls['agent']['spawn'];"
+        },
+        {
+          "name": "list",
+          "line": 2979,
+          "summary": "",
+          "signature": "list: () => Promise<AgentInfo[]>;"
+        },
+        {
+          "name": "register",
+          "line": 3005,
+          "summary": "",
+          "signature": "register: (spec: AgentSpec) => Promise<OpValueOf['agent.register']>;"
+        }
+      ]
+    },
+    {
+      "name": "fs",
+      "line": 3015,
+      "summary": "",
+      "signature": "fs: {",
+      "members": [
+        {
+          "name": "read",
+          "line": 3034,
+          "summary": "",
+          "signature": "read: FsReadCall;"
+        },
+        {
+          "name": "write",
+          "line": 3041,
+          "summary": "",
+          "signature": "write: (path: string, text: string) => Promise<void>;"
+        },
+        {
+          "name": "list",
+          "line": 3055,
+          "summary": "",
+          "signature": "list: (path?: string) => Promise<FsEntry[]>;"
+        },
+        {
+          "name": "exists",
+          "line": 3060,
+          "summary": "",
+          "signature": "exists: (path: string) => Promise<boolean>;"
+        },
+        {
+          "name": "stat",
+          "line": 3113,
+          "summary": "",
+          "signature": "stat: (path: string, options?: FsStatOptions) => Promise<FsStat>;"
+        },
+        {
+          "name": "ancestors",
+          "line": 3134,
+          "summary": "",
+          "signature": "ancestors: (request: FsAncestorsRequest) => Promise<readonly FsAncestor[]>;"
+        }
+      ]
+    },
+    {
+      "name": "store",
+      "line": 3143,
+      "summary": "",
+      "signature": "store: {",
+      "members": [
+        {
+          "name": "get",
+          "line": 3150,
+          "summary": "",
+          "signature": "get: (key: string) => Promise<unknown>;"
+        },
+        {
+          "name": "set",
+          "line": 3158,
+          "summary": "",
+          "signature": "set: (key: string, value: unknown) => Promise<void>;"
+        },
+        {
+          "name": "delete",
+          "line": 3162,
+          "summary": "",
+          "signature": "delete: (key: string) => Promise<void>;"
+        },
+        {
+          "name": "keys",
+          "line": 3166,
+          "summary": "",
+          "signature": "keys: () => Promise<string[]>;"
+        }
+      ]
+    },
+    {
+      "name": "state",
+      "line": 3176,
+      "summary": "",
+      "signature": "state: {",
+      "members": [
+        {
+          "name": "get",
+          "line": 3192,
+          "summary": "",
+          "signature": "get: <P extends keyof PluginState & string, K extends keyof PluginState[P] & string>(ref: StateRef<P, K>) => Promise<StateRead<StateValue<P, K>>>;"
+        },
+        {
+          "name": "set",
+          "line": 3208,
+          "summary": "",
+          "signature": "set: <P extends keyof PluginState & string, K extends keyof PluginState[P] & string>(ref: StateRef<P, K>, value: StateValue<P, K>, options?: StateSetOptions) => Promise<StateSetResult>;"
+        }
+      ]
+    },
+    {
+      "name": "clock",
+      "line": 3218,
+      "summary": "",
+      "signature": "clock: {",
+      "members": [
+        {
+          "name": "now",
+          "line": 3225,
+          "summary": "",
+          "signature": "now: () => Promise<number>;"
+        },
+        {
+          "name": "sleep",
+          "line": 3239,
+          "summary": "",
+          "signature": "sleep: (ms: number, options?: SleepOptions) => Promise<void>;"
+        },
+        {
+          "name": "after",
+          "line": 3246,
+          "summary": "",
+          "signature": "after: TimerCall;"
+        },
+        {
+          "name": "every",
+          "line": 3256,
+          "summary": "",
+          "signature": "every: TimerCall;"
+        }
+      ]
+    },
+    {
+      "name": "http",
+      "line": 3261,
+      "summary": "",
+      "signature": "http: {",
+      "members": [
+        {
+          "name": "fetch",
+          "line": 3282,
+          "summary": "",
+          "signature": "fetch: (url: string, init?: HttpInit) => Promise<HttpResponse>;"
+        }
+      ]
+    },
+    {
+      "name": "process",
+      "line": 3290,
+      "summary": "",
+      "signature": "process: {",
+      "members": [
+        {
+          "name": "run",
+          "line": 3307,
+          "summary": "",
+          "signature": "run: (argv: readonly string[], init?: ProcessRunInit) => Promise<ProcessRunResult>;"
+        },
+        {
+          "name": "spawn",
+          "line": 3345,
+          "summary": "",
+          "signature": "spawn: (request: ProcessSpawnRequest) => HookStream<ProcessSpawnChunk, ProcessSpawnResult>;"
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "line": 3355,
+      "summary": "",
+      "signature": "settings: {",
+      "members": [
+        {
+          "name": "read",
+          "line": 3370,
+          "summary": "",
+          "signature": "read: (args?: SettingsReadArgs) => Promise<Settings>;"
+        }
+      ]
+    },
+    {
+      "name": "env",
+      "line": 3380,
+      "summary": "",
+      "signature": "env: {",
+      "members": [
+        {
+          "name": "get",
+          "line": 3390,
+          "summary": "",
+          "signature": "get: (name: string) => Promise<string | undefined>;"
+        },
+        {
+          "name": "set",
+          "line": 3401,
+          "summary": "",
+          "signature": "set: (name: string, value: string | undefined) => Promise<void>;"
+        }
+      ]
+    }
+  ],
+  "render_components": {
+    "line": 8712,
+    "values": [
+      "AskUserQuestion",
+      "UserMessage",
+      "AssistantMessage",
+      "ToolUse",
+      "ToolResult",
+      "ToolGroup",
+      "ToolProgress",
+      "CommandOutput",
+      "Spinner",
+      "TurnDuration",
+      "InfoNotice",
+      "SessionMode",
+      "PromptHint",
+      "AbovePrompt",
+      "Pane"
+    ]
+  },
+  "elements": {
+    "terminal": {
+      "line": 3595,
+      "elements": [
+        "Box",
+        "Text",
+        "Button",
+        "Input",
+        "Select",
+        "Link",
+        "Code",
+        "Markdown",
+        "Client",
+        "Raster",
+        "Image"
+      ]
+    },
+    "desktop": {
+      "line": 3616,
+      "elements": [
+        "Box",
+        "Text",
+        "Button",
+        "Input",
+        "Select",
+        "Svg",
+        "Link",
+        "Code",
+        "Markdown",
+        "Client"
+      ]
+    },
+    "mobile": {
+      "line": 3634,
+      "elements": [
+        "Box",
+        "Text",
+        "Button",
+        "Svg",
+        "Link",
+        "Code",
+        "Markdown"
+      ]
+    },
+    "vscode": {
+      "line": 3650,
+      "elements": [
+        "Box",
+        "Text",
+        "Button",
+        "Input",
+        "Select",
+        "Svg",
+        "Link",
+        "Code",
+        "Markdown"
+      ]
+    }
+  },
+  "exported_types": [
+    "AgentCallRecord",
+    "AgentInfo",
+    "AgentLoop",
+    "AgentOfferInput",
+    "AgentOfferResult",
+    "AgentSpawnArgs",
+    "AgentSpawnInput",
+    "AgentSpawnResult",
+    "AnyEventHook",
+    "Args",
+    "AskOptions",
+    "AsymmetricMatcher",
+    "AsyncMatchers",
+    "Atom",
+    "AtomFunction",
+    "AtomOptions",
+    "AttributionTextInput",
+    "AttributionTextKind",
+    "AttributionTextResult",
+    "AudioClip",
+    "BoxHoverProps",
+    "BoxProps",
+    "BuiltinToolCallInput",
+    "BuiltinToolInputs",
+    "BuiltinToolName",
+    "BuiltinToolResults",
+    "ButtonProps",
+    "CatchHandler",
+    "Caught",
+    "Chunk",
+    "ChunkOf",
+    "ClassicEvent",
+    "ClassicEventName",
+    "ClassicEventOf",
+    "ClassicFields",
+    "ClassicHookEvent",
+    "ClassicHookInputs",
+    "ClassicResult",
+    "ClassicResultFields",
+    "ClassicResultOf",
+    "ClassifyOptions",
+    "ClientElements",
+    "ClientKeyEvent",
+    "ClientModule",
+    "ClientPointerEvent",
+    "ClientPointerType",
+    "ClientProps",
+    "ClientScope",
+    "ClientSurface",
+    "CodeProps",
+    "CommandDescribeInput",
+    "CommandDescribeResult",
+    "CommandInfo",
+    "CommandPresentation",
+    "CommandRunArgs",
+    "CommandRunInput",
+    "CommandRunResult",
+    "CommandSource",
+    "CommandSpec",
+    "ConfigDescribeInput",
+    "ConfigDescribeResult",
+    "ConfigKind",
+    "ConfigOrigin",
+    "ConfigRow",
+    "ConfigSetArgs",
+    "ConfigSetInput",
+    "ConfigSetResult",
+    "ConfigValue",
+    "Constructor",
+    "ContextAgent",
+    "ContextBreakdownDetail",
+    "ContextCategory",
+    "ContextCategoryKind",
+    "ContextGridSquare",
+    "ContextMcpTool",
+    "ContextMemoryFile",
+    "ContextSkill",
+    "ContextSkills",
+    "ContextSlashCommands",
+    "ContextWindowSource",
+    "CoreEngineInterface",
+    "DeriveFunction",
+    "Derived",
+    "ElementChildren",
+    "ElementConstructor",
+    "ElementName",
+    "ElementOfAct",
+    "ElementQuery",
+    "ElementTable",
+    "Elements",
+    "Engine",
+    "EngineCall",
+    "EngineClassic",
+    "EngineCreateInput",
+    "EngineCreateResult",
+    "EngineEventOf",
+    "EngineInput",
+    "EngineInterface",
+    "EngineInterfaceBuilt",
+    "EngineMount",
+    "EngineNoun",
+    "EngineNounEvent",
+    "EnginePress",
+    "EngineResultOf",
+    "EngineSelect",
+    "EventCalls",
+    "EventName",
+    "EventOf",
+    "EventResult",
+    "Events",
+    "Expect",
+    "Expectation",
+    "Expecting",
+    "FoundElement",
+    "Frozen",
+    "FsAncestor",
+    "FsAncestorPart",
+    "FsAncestorsRequest",
+    "FsBytes",
+    "FsEntry",
+    "FsReadAs",
+    "FsReadBytesOptions",
+    "FsReadCall",
+    "FsReadOptions",
+    "FsStat",
+    "FsStatOptions",
+    "Glob",
+    "GlobHook",
+    "GlobNext",
+    "Hook",
+    "HookBudget",
+    "HookFailure",
+    "HookFor",
+    "HookOf",
+    "HookStream",
+    "HooksModule",
+    "HttpInit",
+    "HttpResponse",
+    "ImageBlitArgs",
+    "ImageProps",
+    "ImageSource",
+    "InputProps",
+    "InputTarget",
+    "InstructionFile",
+    "InstructionFileKind",
+    "InvalidatableEventName",
+    "JsonValue",
+    "LinkProps",
+    "MarkdownLeafProps",
+    "MarkdownProps",
+    "MatchedEvent",
+    "MatchedHook",
+    "MatchedResult",
+    "MatchedStreamHook",
+    "Matcher",
+    "Matchers",
+    "Matching",
+    "McpContentBlock",
+    "McpToolCallInput",
+    "McpToolInputs",
+    "McpToolName",
+    "McpToolResult",
+    "MemberOfFunction",
+    "Mock",
+    "MockClock",
+    "MockClockOptions",
+    "ModelApiError",
+    "ModelCompleteOptions",
+    "ModelCompleteRequest",
+    "ModelCompleteResult",
+    "ModelEffort",
+    "ModelForkRequest",
+    "ModelForkResult",
+    "ModelUsage",
+    "MountInputTarget",
+    "MountKeyEvent",
+    "MountPointerEvent",
+    "MountPressTarget",
+    "MountResizeTarget",
+    "MountSelectTarget",
+    "MountTarget",
+    "Mounted",
+    "MountedMembers",
+    "Namespace",
+    "Narrowed",
+    "Negatable",
+    "Next",
+    "NextBudget",
+    "NextResult",
+    "NextResultFor",
+    "NoEngineInterface",
+    "NounEventOf",
+    "On",
+    "OpEventName",
+    "OpEventOf",
+    "OpEventResult",
+    "OpValueOf",
+    "Origin",
+    "PaneCloseArgs",
+    "PaneCloseInput",
+    "PaneCloseOrigin",
+    "PaneOpenArgs",
+    "Pattern",
+    "PermissionRequestDecision",
+    "PlayOptions",
+    "Plugin",
+    "PluginOptions",
+    "PluginRegisterInput",
+    "PluginRegisterResult",
+    "PluginRegisterUses",
+    "PluginState",
+    "PluginTier",
+    "PreToolUseDecision",
+    "PreToolUseResult",
+    "PressTarget",
+    "PressedLink",
+    "ProcessRunInit",
+    "ProcessRunResult",
+    "ProcessSpawnChunk",
+    "ProcessSpawnRequest",
+    "ProcessSpawnResult",
+    "PromptAttachmentDetailOf",
+    "PromptAttachmentInput",
+    "PromptAttachmentOrigin",
+    "PromptAttachmentResult",
+    "PromptBox",
+    "PromptComposeArgs",
+    "PromptComposeInput",
+    "PromptComposeResult",
+    "PromptComposeScope",
+    "PromptComposeSection",
+    "PromptComposeTrait",
+    "PromptContextBlock",
+    "PromptContextBlocks",
+    "PromptContextInput",
+    "PromptContextResult",
+    "PromptDecoration",
+    "PromptEditInput",
+    "PromptEditOrigin",
+    "PromptEditResult",
+    "PromptFillArgs",
+    "PromptFillInput",
+    "PromptFillMode",
+    "PromptFillOrigin",
+    "PromptFillResult",
+    "PromptFilled",
+    "PromptOrigin",
+    "PromptSectionInput",
+    "PromptSectionResult",
+    "PromptSubmitArgs",
+    "PromptSubmitAttachment",
+    "PromptSubmitInput",
+    "PromptSubmitResult",
+    "PromptSuggestArgs",
+    "PromptSuggestInput",
+    "PromptSuggestOrigin",
+    "PromptSuggestResult",
+    "RasterBlitArgs",
+    "RasterProps",
+    "ReadFunction",
+    "Register",
+    "Registration",
+    "RenderChildren",
+    "RenderComponent",
+    "RenderElement",
+    "RenderEventName",
+    "RenderInput",
+    "RenderInputOf",
+    "RenderNode",
+    "RenderPropsOf",
+    "RenderResultOf",
+    "RenderSurface",
+    "RenderViewport",
+    "ResolveInput",
+    "ResolveInputOf",
+    "ResultOf",
+    "SelectOption",
+    "SelectProps",
+    "SelectTarget",
+    "Selected",
+    "SessionAttachInput",
+    "SessionAttachResult",
+    "SessionAuthorization",
+    "SessionCompactArgs",
+    "SessionCompactInput",
+    "SessionCompactResult",
+    "SessionCompactSkipped",
+    "SessionCompactTrigger",
+    "SessionCompacted",
+    "SessionContextBreakdown",
+    "SessionContextUsage",
+    "SessionCost",
+    "SessionDetachInput",
+    "SessionDetachReason",
+    "SessionDetachResult",
+    "SessionEndInput",
+    "SessionEndReason",
+    "SessionEndResult",
+    "SessionMeasureInput",
+    "SessionMeasureResult",
+    "SessionMessage",
+    "SessionRateLimit",
+    "SessionReceiveEvent",
+    "SessionReceiveInput",
+    "SessionReceiveOrigin",
+    "SessionReceiveResult",
+    "SessionRepo",
+    "SessionResume",
+    "SessionSendAddress",
+    "SessionSendArgs",
+    "SessionSendInput",
+    "SessionSendOrigin",
+    "SessionSendResult",
+    "SessionStartInput",
+    "SessionStartResult",
+    "SessionUsage",
+    "SessionUsageArgs",
+    "SessionVersion",
+    "Settings",
+    "SettingsReadArgs",
+    "SettingsSource",
+    "Shaped",
+    "ShapedValue",
+    "SiteScroll",
+    "SiteView",
+    "SkillPromptInput",
+    "SkillPromptResult",
+    "SleepOptions",
+    "SourceValues",
+    "SpeakOptions",
+    "SpeakResult",
+    "StarNext",
+    "StateAddress",
+    "StateDollar",
+    "StateFamily",
+    "StateGetEvent",
+    "StateRead",
+    "StateRef",
+    "StateSetEvent",
+    "StateSetOptions",
+    "StateSetResult",
+    "StateValue",
+    "StateWrite",
+    "StreamHook",
+    "StreamHookBody",
+    "StreamNext",
+    "StreamingEventName",
+    "SvgProps",
+    "TargetTier",
+    "TelemetryAttribute",
+    "TelemetryChoice",
+    "TelemetryDestination",
+    "TelemetryLogArgs",
+    "TelemetryLogInput",
+    "TelemetryLogResult",
+    "TelemetryMarkInput",
+    "TelemetryMarkKind",
+    "TelemetryMarkResult",
+    "TelemetryProp",
+    "TelemetryRecordEntry",
+    "TelemetryRowArgs",
+    "TelemetryRowEntry",
+    "TelemetrySpan",
+    "TestBody",
+    "TestOptions",
+    "TestRest",
+    "TextHoverProps",
+    "TextProps",
+    "ThrowExpectation",
+    "Tier",
+    "Timer",
+    "TimerCall",
+    "ToastOptions",
+    "ToolCallArgs",
+    "ToolCallEnvelope",
+    "ToolCallInput",
+    "ToolCallReserved",
+    "ToolCallResult",
+    "ToolDeferral",
+    "ToolDescribeInput",
+    "ToolDescribeResult",
+    "ToolGroupCall",
+    "ToolInfo",
+    "ToolInputOf",
+    "ToolResultOf",
+    "ToolResultSummary",
+    "ToolSpec",
+    "ToolUseSummary",
+    "TraceEntry",
+    "TraceOutcome",
+    "TurnCompleteInput",
+    "TurnCompleteReason",
+    "TurnCompleteResult",
+    "TurnRefusal",
+    "TurnStartInput",
+    "TurnStartResult",
+    "TurnStepChunk",
+    "TurnStepEngineChunk",
+    "TurnStepInput",
+    "TurnStepInputChunk",
+    "TurnStepResult",
+    "TurnStepStopChunk",
+    "TurnStepTextChunk",
+    "TurnStepThinkingChunk",
+    "TurnStepToolChunk",
+    "TurnStepToolUse",
+    "TurnUsage",
+    "UiBlitArgs",
+    "UiBlitResult",
+    "UiCopyArgs",
+    "UiCopyResult",
+    "UiFocusArgs",
+    "UiFocusComponent",
+    "UiFocusInput",
+    "UiFocusOrigin",
+    "UiFocusResult",
+    "UiInputArgument",
+    "UiInputResult",
+    "UiLogOptions",
+    "UiLogSink",
+    "UiMessageArgument",
+    "UiMessageResult",
+    "UiOpenResult",
+    "UiPane",
+    "UiPressArgument",
+    "UiPressResult",
+    "UiScrollArgs",
+    "UiScrollBlock",
+    "UiScrollComponent",
+    "UiScrollInput",
+    "UiScrollOrigin",
+    "UiScrollPointer",
+    "UiScrollResult",
+    "UiScrollTarget",
+    "UiSelectArgument",
+    "UiSelectResult",
+    "UpdateFunction",
+    "UsageUnit",
+    "WithMessage"
+  ],
+  "limits": [
+    {
+      "line": 521,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 723,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 1234,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 1429,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 1458,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 2545,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 3012,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 3020,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 3156,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 4812,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 4820,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 4828,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 5030,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 5333,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 5395,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 5417,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 5418,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 7554,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 7572,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 7581,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 7612,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 8440,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 11248,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 11580,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 11851,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 14904,
+      "text": "(limit line; text not redistributed)"
+    },
+    {
+      "line": 14926,
+      "text": "(limit line; text not redistributed)"
+    }
+  ],
+  "counts": {
+    "engine_events": 43,
+    "op_events": 61,
+    "classic_events": 33,
+    "exported_types": 439,
+    "limit_lines": 27
+  }
+}

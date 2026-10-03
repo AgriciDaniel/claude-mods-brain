@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mods-brain.synthesis.v1",
+  "title": "Capability matrix and verdict suggestions",
+  "type": "object",
+  "required": [
+    "schema",
+    "claude_code_version",
+    "event_matrix",
+    "namespace_matrix",
+    "mods"
+  ],
+  "properties": {
+    "schema": {
+      "const": "mods-brain.synthesis.v1"
+    },
+    "claude_code_version": {
+      "type": "string"
+    },
+    "mods_scanned": {
+      "type": "integer"
+    },
+    "event_matrix": {
+      "type": "object"
+    },
+    "namespace_matrix": {
+      "type": "object"
+    },
+    "unused_events": {
+      "type": "array"
+    },
+    "op_event_hooks": {
+      "type": "object"
+    },
+    "unknown_events": {
+      "type": "object"
+    },
+    "mods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "reach",
+          "verdict_suggestion"
+        ],
+        "properties": {
+          "verdict_suggestion": {
+            "enum": [
+              "adopt-candidate",
+              "trial",
+              "avoid"
+            ]
+          }
+        }
+      }
+    },
+    "catalog": {
+      "type": "array"
+    }
+  }
+}

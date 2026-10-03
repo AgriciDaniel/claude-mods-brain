@@ -1,0 +1,213 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Session",
+      "x": -20,
+      "y": -60,
+      "width": 380,
+      "height": 340,
+      "color": "4"
+    },
+    {
+      "id": "ss",
+      "x": 0,
+      "y": 0,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Turn and Session Events.md"
+    },
+    {
+      "id": "cb",
+      "x": 0,
+      "y": 130,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Classic Hook Bridge.md"
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Prompt",
+      "x": 400,
+      "y": -60,
+      "width": 380,
+      "height": 340,
+      "color": "5"
+    },
+    {
+      "id": "pe",
+      "x": 420,
+      "y": 0,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Prompt Events.md"
+    },
+    {
+      "id": "pc",
+      "x": 420,
+      "y": 130,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Prompt Cache Discipline.md"
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Turn and tools",
+      "x": 820,
+      "y": -60,
+      "width": 380,
+      "height": 470,
+      "color": "1"
+    },
+    {
+      "id": "te",
+      "x": 840,
+      "y": 0,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Tool Events.md"
+    },
+    {
+      "id": "hold",
+      "x": 840,
+      "y": 130,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Holding a Tool Call.md"
+    },
+    {
+      "id": "ord",
+      "x": 840,
+      "y": 260,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Hook Ordering and Tiers.md"
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "Agents and commands",
+      "x": 1240,
+      "y": -60,
+      "width": 380,
+      "height": 210,
+      "color": "6"
+    },
+    {
+      "id": "ac",
+      "x": 1260,
+      "y": 0,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Agent and Command Events.md"
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Interface",
+      "x": 1660,
+      "y": -60,
+      "width": 380,
+      "height": 470,
+      "color": "3"
+    },
+    {
+      "id": "rs",
+      "x": 1680,
+      "y": 0,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Render Sites.md"
+    },
+    {
+      "id": "ui",
+      "x": 1680,
+      "y": 130,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/UI Elements and JSX.md"
+    },
+    {
+      "id": "bp",
+      "x": 1680,
+      "y": 260,
+      "width": 340,
+      "height": 110,
+      "type": "file",
+      "file": "wiki/concepts/Band and Pane Fallback.md"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "fromNode": "ss",
+      "toNode": "pe",
+      "label": "session.start, then prompt.submit"
+    },
+    {
+      "id": "e1",
+      "fromNode": "pe",
+      "toNode": "te",
+      "label": "turn.start, turn.step, tool.call"
+    },
+    {
+      "id": "e2",
+      "fromNode": "te",
+      "toNode": "ac",
+      "label": "agent.spawn, command.run"
+    },
+    {
+      "id": "e3",
+      "fromNode": "te",
+      "toNode": "rs",
+      "label": "ui.render of ToolUse"
+    },
+    {
+      "id": "e4",
+      "fromNode": "pe",
+      "toNode": "pc",
+      "label": "prompt.section text"
+    },
+    {
+      "id": "e5",
+      "fromNode": "te",
+      "toNode": "hold",
+      "label": "hold before next"
+    },
+    {
+      "id": "e6",
+      "fromNode": "te",
+      "toNode": "ord",
+      "label": "tiers"
+    },
+    {
+      "id": "e7",
+      "fromNode": "rs",
+      "toNode": "ui"
+    },
+    {
+      "id": "e8",
+      "fromNode": "ui",
+      "toNode": "bp"
+    },
+    {
+      "id": "e9",
+      "fromNode": "ss",
+      "toNode": "cb",
+      "label": "classic.<Event>"
+    }
+  ]
+}

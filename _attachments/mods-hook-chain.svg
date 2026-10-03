@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="t d">
+<title id="t">Claude Code mods hook chain</title>
+<desc id="d">Five nested tiers, outermost first: prepend, user, append, builtin, then core. An event enters at the outer tier and the result returns outward.</desc>
+<rect width="960" height="560" fill="#FFFFFF"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0B57D0"/></marker><marker id="b" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#137333"/></marker></defs>
+<text x="32" y="44" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#202124">How one event runs through mods</text>
+<text x="32" y="70" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#5F6368">Claude Code 2.1.288. Outer tiers see the event first and the result last; an inner hook cannot hide anything from an outer one.</text>
+<rect x="32" y="100" width="600" height="400" rx="14" fill="#D3E3FD" stroke="#0B57D0" stroke-width="2"/>
+<text x="46" y="122" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#0B57D0">prepend</text>
+<text x="122" y="122" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#202124">org mods: sec-default, prependPlugins</text>
+<rect x="66" y="134" width="532" height="332" rx="14" fill="#CEEAD6" stroke="#137333" stroke-width="2"/>
+<text x="80" y="156" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#137333">user</text>
+<text x="156" y="156" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#202124">mods a person installs</text>
+<rect x="100" y="168" width="464" height="264" rx="14" fill="#FEEFC3" stroke="#976800" stroke-width="2"/>
+<text x="114" y="190" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#976800">append</text>
+<text x="190" y="190" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#202124">org mods: appendPlugins</text>
+<rect x="134" y="202" width="396" height="196" rx="14" fill="#FAD2CF" stroke="#C5221F" stroke-width="2"/>
+<text x="148" y="224" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#C5221F">builtin</text>
+<text x="224" y="224" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#202124">mods bundled in Claude Code</text>
+<rect x="168" y="236" width="328" height="128" rx="14" fill="#202124"/>
+<text x="332.0" y="294.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">core</text>
+<text x="332.0" y="316.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#D3E3FD">permission prompt, the tool itself</text>
+<path d="M 482 108 L 482 226" stroke="#0B57D0" stroke-width="3" marker-end="url(#a)"/>
+<path d="M 532 232 L 532 114" stroke="#137333" stroke-width="3" marker-end="url(#b)"/>
+<text x="474" y="122" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#0B57D0">event in</text>
+<text x="550" y="122" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#137333">result out</text>
+<text x="680" y="120" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#202124">Three moves per hook</text>
+<rect x="680" y="150" width="248" height="76" rx="10" fill="#F8F9FA" stroke="#DADCE0"/>
+<text x="696" y="178" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#202124">Observe</text>
+<text x="696" y="204" font-family="Menlo, Consolas, monospace" font-size="12" fill="#3C4043">r = await next(e); return r</text>
+<rect x="680" y="242" width="248" height="76" rx="10" fill="#F8F9FA" stroke="#DADCE0"/>
+<text x="696" y="270" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#202124">Rewrite</text>
+<text x="696" y="296" font-family="Menlo, Consolas, monospace" font-size="12" fill="#3C4043">return next({ ...e, field })</text>
+<rect x="680" y="334" width="248" height="76" rx="10" fill="#F8F9FA" stroke="#DADCE0"/>
+<text x="696" y="362" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#202124">Answer</text>
+<text x="696" y="388" font-family="Menlo, Consolas, monospace" font-size="12" fill="#3C4043">return { deny } or { result }</text>
+<text x="680" y="440" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#5F6368">A guard needs .catch failing closed:</text>
+<text x="680" y="460" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#5F6368">a hook that times out is skipped.</text>
+<text x="680" y="500" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#5F6368">Source: types 2.1.288 L11897-11907; docs-mods-events</text>
+</svg>

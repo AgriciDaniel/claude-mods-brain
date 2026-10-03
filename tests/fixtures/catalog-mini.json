@@ -1,0 +1,3 @@
+{"schema": "mods-brain.catalog.v1", "as_of": "2026-10-03", "mods": [
+ {"name": "clean-band", "repo": "example/clean-band", "pinned_sha": "0000000000000000000000000000000000000000", "what": "fixture band", "reach": "L0", "usage_cost": "none", "tested_on": "9.9.1", "code_reviewed": "static read", "verdict": "adopt", "verdict_reason": "fixture"}
+]}

@@ -1,0 +1,5 @@
+{
+  "brain_schema": "mods-brain.v1",
+  "sources": [],
+  "notes": "Put your own immutable captures under .raw/ and hash them here. The published repo ships no third-party captures; references/source-ledger.json cites the original URLs."
+}

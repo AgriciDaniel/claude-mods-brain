@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude-mods-brain"
+version = "1.0.0"
+description = "Source-cited knowledge base and offline tools for Claude Code mods"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT (code); CC-BY-4.0 (content)" }
+authors = [{ name = "Daniel Agrici" }]
+
+[project.scripts]
+mods-brain = "mods_brain.cli:main"
+
+[tool.setuptools]
+packages = ["mods_brain"]
