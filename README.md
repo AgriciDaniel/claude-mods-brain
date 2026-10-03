@@ -1,11 +1,5 @@
 <p align="center">
-  <img src="assets/pane-live.gif" alt="A Claude Code mod drawing a live progress pane beside the conversation" width="100%"/>
-</p>
-
-<h1 align="center">Claude Mods Brain</h1>
-
-<p align="center">
-  <b>Everything worth knowing about Claude Code mods, in one Obsidian vault,<br/>with every claim linked to where it came from.</b>
+  <img src="assets/cover.svg" alt="Claude Mods Brain: a terminal with a small mod pane and a mod band above the prompt" width="100%"/>
 </p>
 
 <p align="center">
@@ -30,11 +24,6 @@ that runs *inside* Claude Code. It can:
 That is a lot of power, and it moves fast. Mods are not sandboxed: a mod runs with your permissions. And
 the API can change between releases. This brain exists so you can learn mods, build them, and judge
 someone else's mod before you install it, without guessing.
-
-<p align="center">
-  <img src="assets/pane-review-deck.png" alt="A mod pane that walks a person through reviewing extracted business rules" width="85%"/>
-</p>
-<p align="center"><sub>Real mod UI from Anthropic's own <code>code-modernization</code> plugin (Apache-2.0). The animation at the top is the same plugin's live progress pane.</sub></p>
 
 ## What you get
 
@@ -119,8 +108,6 @@ No copies of third-party documentation are included: the vault links to the orig
 - **Notes and other written content** (`wiki/`, `references/`, `agents/`): [CC BY 4.0](LICENSE-CONTENT).
   Reuse them freely, with credit.
 - **Code** (`scripts/`, `mods_brain/`, `tests/`, `schemas/`): [MIT](LICENSE).
-- **Screenshots** in `assets/` come from Anthropic's `code-modernization` plugin and are used under the
-  [Apache License 2.0](assets/LICENSE-APACHE-2.0-screenshots.txt). See [NOTICE](NOTICE).
 - *Claude* and *Claude Code* are trademarks of Anthropic. This is an independent project, not affiliated
   with or endorsed by Anthropic.
 

@@ -6,15 +6,6 @@ Code: MIT (LICENSE). Written content: CC BY 4.0 (LICENSE-CONTENT).
 Third-party material
 --------------------
 
-assets/pane-live.gif, assets/pane-fleet.png, assets/pane-review-deck.png,
-assets/pane-sign.png
-  Screenshots from the code-modernization plugin by Anthropic, PBC,
-  repository anthropics/claude-plugins-official, path
-  plugins/code-modernization/assets/media/, at commit
-  d182ca456ca09d31d139f7d3818d1d333b103cce. Licensed under the Apache
-  License, Version 2.0; a copy is in assets/LICENSE-APACHE-2.0-screenshots.txt.
-  The files are unmodified.
-
 Quotations and citations
   Notes quote third-party sources (Anthropic documentation, the
   anthropics/claude-code issue 91870 thread, independent research, community

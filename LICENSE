@@ -4,8 +4,7 @@ Copyright (c) 2026 Daniel Agrici
 
 This license covers the code in this repository: scripts/, mods_brain/, tests/,
 schemas/, and .github/. Written content (wiki/, references/, agents/) is
-licensed separately under CC BY 4.0; see LICENSE-CONTENT. Screenshots in
-assets/ are third-party material under the Apache License 2.0; see NOTICE.
+licensed separately under CC BY 4.0; see LICENSE-CONTENT.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
