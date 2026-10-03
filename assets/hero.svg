@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="ht hd">
+<title id="ht">Claude Mods Brain: a guard mod at work in Claude Code</title>
+<desc id="hd">Claude tries a command that touches a folder outside the project; a guard mod holds it in a pane, the band counts it, the user denies, and Claude runs the safe command instead.</desc>
+<style>
+@keyframes ke2 { 0% { transform: translateX(0); } 3.750% { transform: translateX(0); animation-timing-function: steps(26, end); } 15.000% { transform: translateX(304.8px); } 100% { transform: translateX(304.8px); } }
+#e2 { animation: ke2 16.0s linear infinite; }
+@keyframes ke1 { 0% { opacity: 0; } 3.688% { opacity: 0; } 3.750% { opacity: 1; } 17.438% { opacity: 1; } 17.500% { opacity: 0; } 100% { opacity: 0; } }
+#e1 { opacity: 0; animation: ke1 16.0s linear infinite; }
+@keyframes ke3 { 0% { opacity: 0; } 17.500% { opacity: 0; } 19.062% { opacity: 1; } 95.938% { opacity: 1; } 97.500% { opacity: 0; } 100% { opacity: 0; } }
+#e3 { opacity: 1; animation: ke3 16.0s linear infinite; }
+@keyframes ke4 { 0% { opacity: 0; } 18.750% { opacity: 0; } 20.312% { opacity: 1; } 23.438% { opacity: 1; } 25.000% { opacity: 0; } 100% { opacity: 0; } }
+#e4 { opacity: 0; animation: ke4 16.0s linear infinite; }
+@keyframes ke5 { 0% { opacity: 0; } 25.000% { opacity: 0; } 26.562% { opacity: 1; } 95.938% { opacity: 1; } 97.500% { opacity: 0; } 100% { opacity: 0; } }
+#e5 { opacity: 1; animation: ke5 16.0s linear infinite; }
+@keyframes ke6 { 0% { opacity: 0; } 28.750% { opacity: 0; } 30.312% { opacity: 1; } 42.188% { opacity: 1; } 43.750% { opacity: 0; } 100% { opacity: 0; } }
+#e6 { opacity: 1; animation: ke6 16.0s linear infinite; }
+@keyframes ke7 { 0% { opacity: 0; } 43.750% { opacity: 0; } 45.312% { opacity: 1; } 95.938% { opacity: 1; } 97.500% { opacity: 0; } 100% { opacity: 0; } }
+#e7 { opacity: 0; animation: ke7 16.0s linear infinite; }
+@keyframes ke8 { 0% { opacity: 0; } 50.000% { opacity: 0; } 51.562% { opacity: 1; } 95.938% { opacity: 1; } 97.500% { opacity: 0; } 100% { opacity: 0; } }
+#e8 { opacity: 0; animation: ke8 16.0s linear infinite; }
+@keyframes ke9 { 0% { opacity: 0; } 57.500% { opacity: 0; } 59.062% { opacity: 1; } 95.938% { opacity: 1; } 97.500% { opacity: 0; } 100% { opacity: 0; } }
+#e9 { opacity: 0; animation: ke9 16.0s linear infinite; }
+@keyframes ke10 { 0% { opacity: 0; } 62.500% { opacity: 0; } 64.062% { opacity: 1; } 95.938% { opacity: 1; } 97.500% { opacity: 0; } 100% { opacity: 0; } }
+#e10 { opacity: 0; animation: ke10 16.0s linear infinite; }
+@keyframes ke11 { 0% { opacity: 0; } 28.750% { opacity: 0; } 30.312% { opacity: 1; } 95.938% { opacity: 1; } 97.500% { opacity: 0; } 100% { opacity: 0; } }
+#e11 { opacity: 1; animation: ke11 16.0s linear infinite; }
+@keyframes ke12 { 0% { opacity: 0; } 28.750% { opacity: 0; } 30.312% { opacity: 1; } 44.688% { opacity: 1; } 46.250% { opacity: 0; } 100% { opacity: 0; } }
+#e12 { opacity: 1; animation: ke12 16.0s linear infinite; }
+@keyframes ke13 { 0% { opacity: 0; } 38.750% { opacity: 0; } 40.312% { opacity: 1; } 44.688% { opacity: 1; } 46.250% { opacity: 0; } 100% { opacity: 0; } }
+#e13 { opacity: 1; animation: ke13 16.0s linear infinite; }
+@keyframes ke14 { 0% { opacity: 0; } 46.250% { opacity: 0; } 47.812% { opacity: 1; } 95.938% { opacity: 1; } 97.500% { opacity: 0; } 100% { opacity: 0; } }
+#e14 { opacity: 0; animation: ke14 16.0s linear infinite; }
+@keyframes ke15 { 0% { opacity: 0; } 62.500% { opacity: 0; } 64.062% { opacity: 1; } 95.938% { opacity: 1; } 97.500% { opacity: 0; } 100% { opacity: 0; } }
+#e15 { opacity: 0; animation: ke15 16.0s linear infinite; }
+@keyframes ke16 { 0% { opacity: 0; } 0.000% { opacity: 0; } 1.562% { opacity: 1; } 27.187% { opacity: 1; } 28.750% { opacity: 0; } 100% { opacity: 0; } }
+#e16 { opacity: 0; animation: ke16 16.0s linear infinite; }
+@keyframes ke17 { 0% { opacity: 0; } 28.750% { opacity: 0; } 30.312% { opacity: 1; } 42.188% { opacity: 1; } 43.750% { opacity: 0; } 100% { opacity: 0; } }
+#e17 { opacity: 1; animation: ke17 16.0s linear infinite; }
+@keyframes ke18 { 0% { opacity: 0; } 43.750% { opacity: 0; } 45.312% { opacity: 1; } 60.938% { opacity: 1; } 62.500% { opacity: 0; } 100% { opacity: 0; } }
+#e18 { opacity: 0; animation: ke18 16.0s linear infinite; }
+@keyframes ke19 { 0% { opacity: 0; } 62.500% { opacity: 0; } 64.062% { opacity: 1; } 95.938% { opacity: 1; } 97.500% { opacity: 0; } 100% { opacity: 0; } }
+#e19 { opacity: 0; animation: ke19 16.0s linear infinite; }
+@keyframes ke20 { 0% { opacity: 0; } 0.000% { opacity: 0; } 1.562% { opacity: 1; } 23.438% { opacity: 1; } 25.000% { opacity: 0; } 100% { opacity: 0; } }
+#e20 { opacity: 0; animation: ke20 16.0s linear infinite; }
+@keyframes ke21 { 0% { opacity: 0; } 25.000% { opacity: 0; } 26.562% { opacity: 1; } 55.937% { opacity: 1; } 57.500% { opacity: 0; } 100% { opacity: 0; } }
+#e21 { opacity: 1; animation: ke21 16.0s linear infinite; }
+@keyframes ke22 { 0% { opacity: 0; } 57.500% { opacity: 0; } 59.062% { opacity: 1; } 98.438% { opacity: 1; } 100.000% { opacity: 0; } 100% { opacity: 0; } }
+#e22 { opacity: 0; animation: ke22 16.0s linear infinite; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect width="1200" height="675" fill="#1a1918"/>
+<rect x="40" y="36" width="1120" height="603" rx="16" fill="#262624" stroke="#3e3e38"/>
+<circle cx="68" cy="62" r="6.5" fill="#3e3e38"/>
+<circle cx="90" cy="62" r="6.5" fill="#3e3e38"/>
+<circle cx="112" cy="62" r="6.5" fill="#3e3e38"/>
+<text x="600" y="68" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#6f6c64" text-anchor="middle">~/my-project</text>
+<line x1="40" y1="88" x2="1160" y2="88" stroke="#3e3e38"/>
+<text x="72" y="126" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="600" fill="#faf9f5" text-anchor="start"><tspan fill="#d97757">&#10043;</tspan> Claude Code</text>
+<text x="232" y="126" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#6f6c64" text-anchor="start">1 mod loaded: guard</text>
+<rect x="72" y="548" width="1056" height="44" rx="10" fill="#1a1918" stroke="#3e3e38"/>
+<text x="92" y="577" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="400" fill="#a6a39a" text-anchor="start">&gt;</text>
+<text x="72" y="620" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="400" fill="#6f6c64" text-anchor="start">? for shortcuts</text>
+<rect x="72" y="500" width="1056" height="34" rx="8" fill="#30302e"/>
+<text x="90" y="523" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" fill="#d97757" text-anchor="start">guard</text>
+<text x="860" y="523" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#6f6c64" text-anchor="start">context</text>
+<rect x="936" y="512" width="170" height="10" rx="5" fill="#3e3e38"/>
+<g id="e1"><text x="116" y="577" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#faf9f5">clean up the build folders</text><rect id="e2" x="114" y="559" width="304.8" height="26" fill="#1a1918"/></g>
+<g id="e3"><text x="72" y="172" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="400" fill="#a6a39a" text-anchor="start">&gt; clean up the build folders</text></g>
+<g id="e4"><text x="72" y="214" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="400" fill="#d97757" text-anchor="start"><tspan fill="#d97757">&#10043;</tspan> Thinking&#8230;</text></g>
+<g id="e5"><text x="72" y="214" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="400" fill="#faf9f5" text-anchor="start"><tspan fill="#d97757">&#9679;</tspan> <tspan font-weight="700">Bash</tspan>(rm -rf ./build ./dist ~/.cache)</text></g>
+<g id="e6"><text x="96" y="244" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#d97757" text-anchor="start">&#9492; Held by guard. Waiting for you&#8230;</text></g>
+<g id="e7"><text x="96" y="244" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#e5806f" text-anchor="start">&#9492; Denied by guard: ~/.cache is outside this project</text></g>
+<g id="e8"><text x="72" y="294" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="400" fill="#faf9f5" text-anchor="start"><tspan fill="#faf9f5">&#9679;</tspan> Understood. I will clean only the project folders.</text></g>
+<g id="e9"><text x="72" y="336" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="400" fill="#faf9f5" text-anchor="start"><tspan fill="#d97757">&#9679;</tspan> <tspan font-weight="700">Bash</tspan>(rm -rf ./build ./dist)</text></g>
+<g id="e10"><text x="96" y="366" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="400" fill="#7fb58a" text-anchor="start">&#9492; Done. Removed 2 folders.</text></g>
+<g id="e11"><rect x="760" y="150" width="368" height="268" rx="12" fill="#30302e" stroke="#3e3e38"/><text x="780" y="184" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" font-weight="700" fill="#d97757" text-anchor="start">guard</text><text x="1108" y="184" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="400" fill="#6f6c64" text-anchor="end">mod pane</text><line x1="760" y1="200" x2="1128" y2="200" stroke="#3e3e38"/></g>
+<g id="e12"><rect x="760" y="150" width="368" height="268" rx="12" fill="none" stroke="#d97757"/><text x="780" y="236" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="700" fill="#faf9f5" text-anchor="start">Held: Bash</text><text x="780" y="264" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#a6a39a" text-anchor="start">rm -rf ./build ./dist ~/.cache</text><text x="780" y="296" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#d97757" text-anchor="start">~/.cache is outside this project</text><rect x="780" y="346" width="150" height="40" rx="8" fill="#262624" stroke="#3e3e38"/><text x="855" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#a6a39a" text-anchor="middle">approve</text><rect x="950" y="346" width="150" height="40" rx="8" fill="#262624" stroke="#3e3e38"/><text x="1025" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#faf9f5" text-anchor="middle">deny</text></g>
+<g id="e13"><rect x="950" y="346" width="150" height="40" rx="8" fill="#d97757"/><text x="1025" y="372" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" fill="#1a1918" text-anchor="middle">deny</text></g>
+<g id="e14"><text x="780" y="236" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="700" fill="#faf9f5" text-anchor="start">Decisions</text><text x="780" y="270" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#a6a39a" text-anchor="start"><tspan fill="#e5806f">&#10005; denied</tspan>  rm -rf &#8230; ~/.cache</text></g>
+<g id="e15"><text x="780" y="300" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#a6a39a" text-anchor="start"><tspan fill="#7fb58a">&#10003; allowed</tspan> rm -rf ./build ./dist</text></g>
+<g id="e16"><text x="150" y="523" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#a6a39a" text-anchor="start">watching tool calls</text></g>
+<g id="e17"><text x="150" y="523" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#faf9f5" text-anchor="start"><tspan fill="#d97757">&#9679;</tspan> 1 call held</text></g>
+<g id="e18"><text x="150" y="523" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#a6a39a" text-anchor="start">1 denied</text></g>
+<g id="e19"><text x="150" y="523" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="400" fill="#a6a39a" text-anchor="start">1 denied  &#183;  1 allowed</text></g>
+<g id="e20"><rect x="936" y="512" width="30" height="10" rx="5" fill="#7fb58a"/></g>
+<g id="e21"><rect x="936" y="512" width="52" height="10" rx="5" fill="#7fb58a"/></g>
+<g id="e22"><rect x="936" y="512" width="70" height="10" rx="5" fill="#7fb58a"/></g>
+</svg>
