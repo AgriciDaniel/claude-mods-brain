@@ -1,40 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="t d">
-<title id="t">Claude Code mods hook chain</title>
-<desc id="d">Five nested tiers, outermost first: prepend, user, append, builtin, then core. An event enters at the outer tier and the result returns outward.</desc>
-<rect width="960" height="560" fill="#FFFFFF"/>
-<defs><marker id="a" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0B57D0"/></marker><marker id="b" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#137333"/></marker></defs>
-<text x="32" y="44" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#202124">How one event runs through mods</text>
-<text x="32" y="70" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#5F6368">Claude Code 2.1.288. Outer tiers see the event first and the result last; an inner hook cannot hide anything from an outer one.</text>
-<rect x="32" y="100" width="600" height="400" rx="14" fill="#D3E3FD" stroke="#0B57D0" stroke-width="2"/>
-<text x="46" y="122" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#0B57D0">prepend</text>
-<text x="122" y="122" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#202124">org mods: sec-default, prependPlugins</text>
-<rect x="66" y="134" width="532" height="332" rx="14" fill="#CEEAD6" stroke="#137333" stroke-width="2"/>
-<text x="80" y="156" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#137333">user</text>
-<text x="156" y="156" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#202124">mods a person installs</text>
-<rect x="100" y="168" width="464" height="264" rx="14" fill="#FEEFC3" stroke="#976800" stroke-width="2"/>
-<text x="114" y="190" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#976800">append</text>
-<text x="190" y="190" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#202124">org mods: appendPlugins</text>
-<rect x="134" y="202" width="396" height="196" rx="14" fill="#FAD2CF" stroke="#C5221F" stroke-width="2"/>
-<text x="148" y="224" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#C5221F">builtin</text>
-<text x="224" y="224" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#202124">mods bundled in Claude Code</text>
-<rect x="168" y="236" width="328" height="128" rx="14" fill="#202124"/>
-<text x="332.0" y="294.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">core</text>
-<text x="332.0" y="316.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#D3E3FD">permission prompt, the tool itself</text>
-<path d="M 482 108 L 482 226" stroke="#0B57D0" stroke-width="3" marker-end="url(#a)"/>
-<path d="M 532 232 L 532 114" stroke="#137333" stroke-width="3" marker-end="url(#b)"/>
-<text x="474" y="122" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#0B57D0">event in</text>
-<text x="550" y="122" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#137333">result out</text>
-<text x="680" y="120" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#202124">Three moves per hook</text>
-<rect x="680" y="150" width="248" height="76" rx="10" fill="#F8F9FA" stroke="#DADCE0"/>
-<text x="696" y="178" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#202124">Observe</text>
-<text x="696" y="204" font-family="Menlo, Consolas, monospace" font-size="12" fill="#3C4043">r = await next(e); return r</text>
-<rect x="680" y="242" width="248" height="76" rx="10" fill="#F8F9FA" stroke="#DADCE0"/>
-<text x="696" y="270" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#202124">Rewrite</text>
-<text x="696" y="296" font-family="Menlo, Consolas, monospace" font-size="12" fill="#3C4043">return next({ ...e, field })</text>
-<rect x="680" y="334" width="248" height="76" rx="10" fill="#F8F9FA" stroke="#DADCE0"/>
-<text x="696" y="362" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#202124">Answer</text>
-<text x="696" y="388" font-family="Menlo, Consolas, monospace" font-size="12" fill="#3C4043">return { deny } or { result }</text>
-<text x="680" y="440" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#5F6368">A guard needs .catch failing closed:</text>
-<text x="680" y="460" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#5F6368">a hook that times out is skipped.</text>
-<text x="680" y="500" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#5F6368">Source: types 2.1.288 L11897-11907; docs-mods-events</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 690" width="1280" height="690" role="img" aria-labelledby="hc-t hc-d">
+<title id="hc-t">How one event runs through mods</title>
+<desc id="hc-d">Five nested tiers, outermost first: prepend, user, append, builtin, then core. An event enters at the outer tier and the result returns outward. Each hook can observe, rewrite, or answer.</desc>
+<rect width="1280" height="690" fill="#191917"/>
+<text x="64" y="86" font-family="'Source Serif 4', Georgia, 'Times New Roman', serif" font-size="36" font-weight="600" fill="#FAF9F5" text-anchor="start">How one event runs through mods</text>
+<text x="64" y="122" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#a6a39a" text-anchor="start">Claude Code 2.1.288. Outer tiers see the event first and the result last; an inner hook cannot hide anything from an outer one.</text>
+<rect x="64" y="160" width="700" height="460" rx="16" fill="#1e1d1b" stroke="#D97757" stroke-opacity="0.55" stroke-width="1.4"/>
+<text x="82" y="186" font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" font-weight="500" fill="#D97757" text-anchor="start">prepend</text>
+<text x="162" y="186" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#a6a39a" text-anchor="start">org mods: sec-default, prependPlugins</text>
+<rect x="104" y="200" width="620" height="380" rx="16" fill="#22211e" stroke="#C9A35A" stroke-opacity="0.55" stroke-width="1.4"/>
+<text x="122" y="226" font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" font-weight="500" fill="#C9A35A" text-anchor="start">user</text>
+<text x="202" y="226" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#a6a39a" text-anchor="start">mods a person installs</text>
+<rect x="144" y="240" width="540" height="300" rx="16" fill="#262522" stroke="#8FB3E0" stroke-opacity="0.55" stroke-width="1.4"/>
+<text x="162" y="266" font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" font-weight="500" fill="#8FB3E0" text-anchor="start">append</text>
+<text x="242" y="266" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#a6a39a" text-anchor="start">org mods: appendPlugins</text>
+<rect x="184" y="280" width="460" height="220" rx="16" fill="#2a2926" stroke="#7FB58A" stroke-opacity="0.55" stroke-width="1.4"/>
+<text x="202" y="306" font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" font-weight="500" fill="#7FB58A" text-anchor="start">builtin</text>
+<text x="282" y="306" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#a6a39a" text-anchor="start">mods bundled in Claude Code</text>
+<rect x="224" y="320" width="380" height="140" rx="14" fill="#FAF9F5"/>
+<text x="414.0" y="390" font-family="'Source Serif 4', Georgia, 'Times New Roman', serif" font-size="28" font-weight="600" fill="#191917" text-anchor="middle">core</text>
+<text x="414.0" y="418" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#4a4740" text-anchor="middle">the permission prompt, then the tool itself</text>
+<line x1="530" y1="148" x2="530" y2="306" stroke="#D97757" stroke-width="2"/>
+<path d="M524 304 L530 316 L536 304 Z" fill="#D97757"/>
+<line x1="572" y1="316" x2="572" y2="158" stroke="#FAF9F5" stroke-opacity="0.7" stroke-width="2"/>
+<path d="M566 160 L572 148 L578 160 Z" fill="#FAF9F5" fill-opacity="0.7"/>
+<path id="hc-loop" d="M530 148 L530 316 L572 316 L572 148" fill="none" stroke="none"/>
+<g><circle r="11" fill="#D97757" fill-opacity="0.22"/><circle r="5" fill="#D97757"/><animateMotion dur="4.5s" repeatCount="indefinite" calcMode="linear"><mpath href="#hc-loop" xlink:href="#hc-loop"/></animateMotion></g>
+<circle cx="70" cy="655" r="5" fill="#D97757"/>
+<text x="84" y="660" font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#a6a39a" text-anchor="start">event in</text>
+<circle cx="184" cy="655" r="5" fill="#FAF9F5" fill-opacity="0.7"/>
+<text x="198" y="660" font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#a6a39a" text-anchor="start">result out</text>
+<text x="820" y="192" font-family="'Source Serif 4', Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#FAF9F5" text-anchor="start">Three moves per hook</text>
+<rect x="820" y="216" width="396" height="92" rx="12" fill="#22211f" stroke="#3a3833"/>
+<text x="840" y="252" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#FAF9F5" text-anchor="start">Observe</text>
+<text x="840" y="282" font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" font-weight="400" fill="#e8a88e" text-anchor="start">r = await next(e); return r</text>
+<rect x="820" y="324" width="396" height="92" rx="12" fill="#22211f" stroke="#3a3833"/>
+<text x="840" y="360" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#FAF9F5" text-anchor="start">Rewrite</text>
+<text x="840" y="390" font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" font-weight="400" fill="#e8a88e" text-anchor="start">return next({ ...e, field })</text>
+<rect x="820" y="432" width="396" height="92" rx="12" fill="#22211f" stroke="#3a3833"/>
+<text x="840" y="468" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#FAF9F5" text-anchor="start">Answer</text>
+<text x="840" y="498" font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" font-weight="400" fill="#e8a88e" text-anchor="start">return { deny } or { result }</text>
+<text x="820" y="568" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#a6a39a" text-anchor="start">A guard needs a .catch that fails closed:</text>
+<text x="820" y="590" font-family="'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#a6a39a" text-anchor="start">a hook that times out is skipped.</text>
+<text x="820" y="660" font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#7a766c" text-anchor="start">Source: types 2.1.288 L11897-11907, docs-mods-events</text>
 </svg>
